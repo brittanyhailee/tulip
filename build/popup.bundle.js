@@ -5165,7 +5165,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  min-width: 400px;\n  margin: 0;\n  padding: 0;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  /* background-origin: content-box; */\n  background-attachment: fixed;\n}\n\n#title {\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-family: \"Playwrite VN\", serif;\n  color: white;\n  font-size: 30px;\n}\n\n#memory {\n  color: white;\n  margin-left: 10px;\n}\n\n/* fonts */\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}", "",{"version":3,"sources":["webpack://./src/pages/Popup/Popup.css"],"names":[],"mappings":"AAEA;EACE,gBAAA;EACA,SAAA;EACA,UAAA;EACA,yDAAA;EACA,4BAAA;EACA,4BAAA;EACA,sBAAA;EACA,oCAAA;EACA,4BAAA;AAAF;;AAIA;EACE,SAAA;EACA,UAAA;EACA,kBAAA;EACA,kCAAA;EACA,YAAA;EACA,eAAA;AADF;;AAIA;EACE,YAAA;EACA,iBAAA;AADF;;AAKA,UAAA;AAEA;EACE,kCAAA;EACA,yBAAA;EACA,gBAAA;EACA,kBAAA;AAHF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');\n\nbody {\n  min-width: 400px;\n  margin: 0;\n  padding: 0;\n  background-image: url(\"../../assets/img/tulip_pixel.png\");\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  /* background-origin: content-box; */\n  background-attachment: fixed;\n\n}\n\n#title {\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-family: \"Playwrite VN\", serif;\n  color: white;\n  font-size: 30px;\n}\n\n#memory {\n  color: white;\n  margin-left: 10px;\n}\n\n\n/* fonts */\n\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  min-width: 400px;\n  margin: 0;\n  padding: 0;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  /* background-origin: content-box; */\n  background-attachment: fixed;\n}\n\n#title {\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-family: \"Playwrite VN\", serif;\n  color: white;\n  font-size: 30px;\n}\n\n#memory {\n  color: white;\n  margin-left: 10px;\n}\n\n.camera {\n  width: 60px;\n  height: 50px;\n}\n\n.capture {\n  background-color: transparent;\n  border: none;\n}\n\n.capture:active {\n  transform: scale(0.9);\n}\n\n/* fonts */\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}", "",{"version":3,"sources":["webpack://./src/pages/Popup/Popup.css"],"names":[],"mappings":"AAEA;EACE,gBAAA;EACA,SAAA;EACA,UAAA;EACA,yDAAA;EACA,4BAAA;EACA,4BAAA;EACA,sBAAA;EACA,oCAAA;EACA,4BAAA;AAAF;;AAIA;EACE,SAAA;EACA,UAAA;EACA,kBAAA;EACA,kCAAA;EACA,YAAA;EACA,eAAA;AADF;;AAIA;EACE,YAAA;EACA,iBAAA;AADF;;AAIA;EACE,WAAA;EACA,YAAA;AADF;;AAIA;EACE,6BAAA;EACA,YAAA;AADF;;AAIA;EACE,qBAAA;AADF;;AAKA,UAAA;AAEA;EACE,kCAAA;EACA,yBAAA;EACA,gBAAA;EACA,kBAAA;AAHF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');\n\nbody {\n  min-width: 400px;\n  margin: 0;\n  padding: 0;\n  background-image: url(\"../../assets/img/tulip_pixel.png\");\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  /* background-origin: content-box; */\n  background-attachment: fixed;\n\n}\n\n#title {\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-family: \"Playwrite VN\", serif;\n  color: white;\n  font-size: 30px;\n}\n\n#memory {\n  color: white;\n  margin-left: 10px;\n}\n\n.camera {\n  width: 60px;\n  height: 50px;\n}\n\n.capture {\n  background-color: transparent;\n  border: none;\n}\n\n.capture:active {\n  transform: scale(0.90);\n}\n\n\n/* fonts */\n\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40484,9 +40484,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_img_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/img/logo.svg */ "./src/assets/img/logo.svg");
 /* harmony import */ var _containers_Greetings_Greetings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../containers/Greetings/Greetings */ "./src/containers/Greetings/Greetings.jsx");
 /* harmony import */ var _Popup_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Popup.css */ "./src/pages/Popup/Popup.css");
+/* harmony import */ var _assets_img_camera_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/img/camera.png */ "./src/assets/img/camera.png");
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 /* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
 
 
 
@@ -40499,7 +40501,12 @@ var Popup = function Popup() {
     id: "title"
   }, "tulip"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "memory"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "share your memory:"))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "share your memory:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    "class": "capture"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    "class": "camera",
+    src: _assets_img_camera_png__WEBPACK_IMPORTED_MODULE_4__
+  }))))));
 };
 _c = Popup;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Popup);
@@ -49630,6 +49637,17 @@ module.exports.formatError = function (err) {
 
 /***/ }),
 
+/***/ "./src/assets/img/camera.png":
+/*!***********************************!*\
+  !*** ./src/assets/img/camera.png ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "a062a3bf4347ece469da.png";
+
+/***/ }),
+
 /***/ "./src/assets/img/icon-128.png":
 /*!*************************************!*\
   !*** ./src/assets/img/icon-128.png ***!
@@ -51484,7 +51502,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("f25502f93960dc16c59f")
+/******/ 		__webpack_require__.h = () => ("2c186fcf00b0530d2183")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

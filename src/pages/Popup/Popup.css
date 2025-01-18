@@ -27,6 +27,20 @@ body {
   margin-left: 10px;
 }
 
+.camera {
+  width: 60px;
+  height: 50px;
+}
+
+.capture {
+  background-color: transparent;
+  border: none;
+}
+
+.capture:active {
+  transform: scale(0.90);
+}
+
 
 /* fonts */
 
