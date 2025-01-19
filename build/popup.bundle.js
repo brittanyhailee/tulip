@@ -5154,18 +5154,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
-
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/img/tulip_pixel.png */ "./src/assets/img/tulip_pixel.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap);"]);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  min-width: 400px;\n  margin: 0;\n  padding: 0;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  /* background-origin: content-box; */\n  background-attachment: fixed;\n}\n\n#title {\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-family: \"Playwrite VN\", serif;\n  color: white;\n  font-size: 30px;\n}\n\n#memory {\n  color: white;\n  margin-left: 10px;\n}\n\n.camera {\n  width: 60px;\n  height: 50px;\n}\n\n.capture {\n  background-color: transparent;\n  border: none;\n}\n\n.capture:active {\n  transform: scale(0.9);\n}\n\n/* fonts */\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}", "",{"version":3,"sources":["webpack://./src/pages/Popup/Popup.css"],"names":[],"mappings":"AAEA;EACE,gBAAA;EACA,SAAA;EACA,UAAA;EACA,yDAAA;EACA,4BAAA;EACA,4BAAA;EACA,sBAAA;EACA,oCAAA;EACA,4BAAA;AAAF;;AAIA;EACE,SAAA;EACA,UAAA;EACA,kBAAA;EACA,kCAAA;EACA,YAAA;EACA,eAAA;AADF;;AAIA;EACE,YAAA;EACA,iBAAA;AADF;;AAIA;EACE,WAAA;EACA,YAAA;AADF;;AAIA;EACE,6BAAA;EACA,YAAA;AADF;;AAIA;EACE,qBAAA;AADF;;AAKA,UAAA;AAEA;EACE,kCAAA;EACA,yBAAA;EACA,gBAAA;EACA,kBAAA;AAHF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');\n\nbody {\n  min-width: 400px;\n  margin: 0;\n  padding: 0;\n  background-image: url(\"../../assets/img/tulip_pixel.png\");\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  /* background-origin: content-box; */\n  background-attachment: fixed;\n\n}\n\n#title {\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-family: \"Playwrite VN\", serif;\n  color: white;\n  font-size: 30px;\n}\n\n#memory {\n  color: white;\n  margin-left: 10px;\n}\n\n.camera {\n  width: 60px;\n  height: 50px;\n}\n\n.capture {\n  background-color: transparent;\n  border: none;\n}\n\n.capture:active {\n  transform: scale(0.90);\n}\n\n\n/* fonts */\n\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  min-width: 400px;\n  margin: 0;\n  padding: 0;\n  /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n  background-color: #F4f2f0;\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n}\n\n#title {\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-family: \"Playwrite VN\", serif;\n  /* color: white; */\n  font-size: 30px;\n}\n\n#memory {\n  /* color: white; */\n  margin-left: 10px;\n}\n\n.camera {\n  width: 60px;\n  height: 50px;\n}\n\n.capture {\n  background-color: transparent;\n  border: none;\n}\n\n.capture:active {\n  transform: scale(0.9);\n}\n\n.circle {\n  height: 140px;\n  width: 140px;\n  border-radius: 50%;\n  background-color: pink;\n  border: 2px transparent; /* Optional: For a subtle border */\n  box-shadow: 0px 0px 15px #ae88ba; /* Soft shadow to blur edges */\n  background: radial-gradient(#e66465, #9198e5);\n  /* background: radial-gradient(circle, pink 70%, transparent 100%);  */\n}\n\n.circle:active {\n  transform: scale(0.95);\n}\n\n/* fonts */\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}", "",{"version":3,"sources":["webpack://./src/pages/Popup/Popup.css"],"names":[],"mappings":"AAEA;EACE,gBAAA;EACA,SAAA;EACA,UAAA;EACA,+DAAA;EACA,yBAAA;EACA,4BAAA;EACA,4BAAA;EACA,sBAAA;EACA,4BAAA;AAAF;;AAIA;EACE,SAAA;EACA,UAAA;EACA,kBAAA;EACA,kCAAA;EACA,kBAAA;EACA,eAAA;AADF;;AAIA;EACE,kBAAA;EACA,iBAAA;AADF;;AAIA;EACE,WAAA;EACA,YAAA;AADF;;AAIA;EACE,6BAAA;EACA,YAAA;AADF;;AAIA;EACE,qBAAA;AADF;;AAIA;EACE,aAAA;EACA,YAAA;EACA,kBAAA;EACA,sBAAA;EACA,uBAAA,EAAA,kCAAA;EACA,gCAAA,EAAA,8BAAA;EAEA,6CAAA;EACA,sEAAA;AAFF;;AAKA;EACE,sBAAA;AAFF;;AAMA,UAAA;AAEA;EACE,kCAAA;EACA,yBAAA;EACA,gBAAA;EACA,kBAAA;AAJF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');\n\nbody {\n  min-width: 400px;\n  margin: 0;\n  padding: 0;\n  /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n  background-color: #F4f2f0;\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n\n}\n\n#title {\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-family: \"Playwrite VN\", serif;\n  /* color: white; */\n  font-size: 30px;\n}\n\n#memory {\n  /* color: white; */\n  margin-left: 10px;\n}\n\n.camera {\n  width: 60px;\n  height: 50px;\n}\n\n.capture {\n  background-color: transparent;\n  border: none;\n}\n\n.capture:active {\n  transform: scale(0.90);\n}\n\n.circle {\n  height: 140px;\n  width: 140px;\n  border-radius: 50%;\n  background-color: pink;\n  border: 2px transparent; /* Optional: For a subtle border */\n  box-shadow: 0px 0px 15px #ae88ba; /* Soft shadow to blur edges */\n\n  background: radial-gradient(#e66465, #9198e5);\n  /* background: radial-gradient(circle, pink 70%, transparent 100%);  */\n}\n\n.circle:active {\n  transform: scale(0.95);\n}\n\n\n/* fonts */\n\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5290,42 +5285,6 @@ module.exports = function (cssWithMappingToString) {
     }
   };
   return list;
-};
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
-/*!********************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
-  \********************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    options = {};
-  }
-  if (!url) {
-    return url;
-  }
-  url = String(url.__esModule ? url.default : url);
-
-  // If url is already wrapped in quotes, remove them
-  if (/^['"].*['"]$/.test(url)) {
-    url = url.slice(1, -1);
-  }
-  if (options.hash) {
-    url += options.hash;
-  }
-
-  // Should url be wrapped?
-  // See https://drafts.csswg.org/css-values-3/#urls
-  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
-    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
-  }
-  return url;
 };
 
 /***/ }),
@@ -40501,12 +40460,9 @@ var Popup = function Popup() {
     id: "title"
   }, "tulip"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "memory"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "share your memory:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    "class": "capture"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    "class": "camera",
-    src: _assets_img_camera_png__WEBPACK_IMPORTED_MODULE_4__
-  }))))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "share your memory:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    "class": "circle"
+  }))));
 };
 _c = Popup;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Popup);
@@ -49670,17 +49626,6 @@ module.exports = __webpack_require__.p + "103b5fa18196d5665a7e.svg";
 
 /***/ }),
 
-/***/ "./src/assets/img/tulip_pixel.png":
-/*!****************************************!*\
-  !*** ./src/assets/img/tulip_pixel.png ***!
-  \****************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "1456170359c666a49c60.png";
-
-/***/ }),
-
 /***/ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/client/ErrorOverlayEntry.js":
 /*!***************************************************************************************!*\
   !*** ./node_modules/@pmmmwh/react-refresh-webpack-plugin/client/ErrorOverlayEntry.js ***!
@@ -51502,7 +51447,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("2c186fcf00b0530d2183")
+/******/ 		__webpack_require__.h = () => ("97cd70d722d6b4d377a0")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -52049,7 +51994,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
-/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		// no baseURI
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched

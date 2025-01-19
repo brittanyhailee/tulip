@@ -11,11 +11,12 @@ const Popup = () => {
           <h1 id="title">tulip</h1>
           <div id="memory"> 
             <h2>share your memory:</h2> 
-            <div>
+            {/* <div>
               <button class="capture">
                 <img class="camera" src={camera}></img>
               </button>
-            </div>
+            </div> */}
+            <div class="circle"></div>
           </div>
              
 
