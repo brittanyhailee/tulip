@@ -47,8 +47,7 @@ body {
   border-radius: 50%;
   background-color: pink;
   border: 2px transparent; /* Optional: For a subtle border */
-  box-shadow: 0px 0px 15px #ae88ba; /* Soft shadow to blur edges */
-
+  box-shadow: 0px 0px 20px #ae88ba; /* Soft shadow to blur edges */
   background: radial-gradient(#e66465, #9198e5);
   /* background: radial-gradient(circle, pink 70%, transparent 100%);  */
 }
