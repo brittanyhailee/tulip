@@ -40352,6 +40352,7 @@ __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/r
 
 
 
+
 var container = document.getElementById('app-container');
 var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container); // createRoot(container!) if you use TypeScript
 root.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Panel__WEBPACK_IMPORTED_MODULE_2__["default"], null));
@@ -51309,7 +51310,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("e12494e9ececd681ffef")
+/******/ 		__webpack_require__.h = () => ("eaabfc2c8a18f16d1b57")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
