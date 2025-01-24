@@ -5159,7 +5159,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #242424;\n}\n\n.container {\n  color: #ffffff;\n}", "",{"version":3,"sources":["webpack://./src/pages/Panel/Panel.css"],"names":[],"mappings":"AAAA;EACE,yBAAA;AACF;;AAEA;EACE,cAAA;AACF","sourcesContent":["body {\n  background-color: #242424;\n}\n\n.container {\n  color: #ffffff;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 400px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n  background-color: cadetblue;\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n}\n\n#input {\n  display: flex;\n  flex-direction: column;\n}\n\n#memory {\n  height: 100px;\n  border-radius: 10px;\n}", "",{"version":3,"sources":["webpack://./src/pages/Panel/Panel.css"],"names":[],"mappings":"AAAA;EACE,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,+DAAA;EACA,2BAAA;EACA,4BAAA;EACA,4BAAA;EACA,sBAAA;EACA,4BAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;AACF;;AAGA;EACE,aAAA;EACA,mBAAA;AAAF","sourcesContent":["html {\n  width: 400px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n  background-color: cadetblue;\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n}\n\n#input {\n  display: flex;\n  flex-direction: column;\n\n}\n\n#memory {\n  height: 100px;\n  border-radius: 10px;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41102,7 +41102,11 @@ var _a;
 
 var Panel = function () {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Dev Tools Panel")));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", { action: "#", id: "input" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "What would you like to remember?"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", { id: "memory" }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { type: "submit", value: "send" }))));
 };
 _a = Panel;
 __webpack_require__.$Refresh$.register(_a, "Panel");
@@ -51305,7 +51309,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("49f9fd06b043d41d0e4b")
+/******/ 		__webpack_require__.h = () => ("e12494e9ececd681ffef")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

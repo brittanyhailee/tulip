@@ -40461,7 +40461,7 @@ var Popup = function Popup() {
   }, "tulip"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "memory"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "share your memory:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "memory.html"
+    href: "panel.html"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     "class": "circle"
   })))));
@@ -51449,7 +51449,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("49f9fd06b043d41d0e4b")
+/******/ 		__webpack_require__.h = () => ("e12494e9ececd681ffef")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

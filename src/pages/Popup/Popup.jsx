@@ -16,7 +16,7 @@ const Popup = () => {
                 <img class="camera" src={camera}></img>
               </button>
             </div> */}
-            <a href="memory.html"><div class="circle"></div></a>
+            <a href="panel.html"><div class="circle"></div></a>
             {/* <button onclick="window.location.href=Memory.jsx" class="circle"></button> */}
           </div>
              
