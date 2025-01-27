@@ -41080,10 +41080,10 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/pages/Panel/Panel.tsx":
-/*!***********************************!*\
-  !*** ./src/pages/Panel/Panel.tsx ***!
-  \***********************************/
+/***/ "./src/pages/Panel/DB.tsx":
+/*!********************************!*\
+  !*** ./src/pages/Panel/DB.tsx ***!
+  \********************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -41092,10 +41092,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Test": () => (/* binding */ Test),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Panel_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Panel.css */ "./src/pages/Panel/Panel.css");
-/* harmony import */ var _indexedDb__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./indexedDb */ "./src/pages/Panel/indexedDb.ts");
+/* harmony import */ var _indexedDb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./indexedDb */ "./src/pages/Panel/indexedDb.ts");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 /* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
@@ -41136,52 +41135,151 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _a, _b;
-var _c;
-_c = __webpack_require__.$Refresh$.signature();
-
+var _a;
+var _b;
+_b = __webpack_require__.$Refresh$.signature();
 
 
 var Test = function () {
-    _c();
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    _b();
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]), books = _c[0], setBooks = _c[1];
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
         var runIndexDb = function () { return __awaiter(void 0, void 0, void 0, function () {
-            var indexedDb;
-            return __generator(this, function (_d) {
-                switch (_d.label) {
+            var indexedDb, book, allBooks;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        indexedDb = new _indexedDb__WEBPACK_IMPORTED_MODULE_2__["default"]('test');
+                        indexedDb = new _indexedDb__WEBPACK_IMPORTED_MODULE_0__["default"]('test');
                         return [4 /*yield*/, indexedDb.createObjectStore(['books', 'students'])];
                     case 1:
-                        _d.sent();
-                        return [4 /*yield*/, indexedDb.putValue('books', { name: 'A Game of Thrones' })];
+                        _c.sent();
+                        // Add data to IndexedDB
+                        return [4 /*yield*/, indexedDb.putValue('books', { name: 'Wicked' })];
                     case 2:
-                        _d.sent();
-                        return [4 /*yield*/, indexedDb.putBulkValue('books', [{ name: 'A Song of Fire and Ice' }, { name: 'Red Dirt Heart' }])];
+                        // Add data to IndexedDB
+                        _c.sent();
+                        return [4 /*yield*/, indexedDb.putBulkValue('books', [
+                                { name: 'Little Women' },
+                                { name: 'Kafka on the Shore' },
+                                { name: 'This is the End' },
+                                { name: 'As the World Caves In' },
+                            ])];
                     case 3:
-                        _d.sent();
-                        return [4 /*yield*/, indexedDb.getValue('books', 1)];
+                        _c.sent();
+                        // Re-fetch all books after adding new ones
+                        return [4 /*yield*/, fetchBooks(indexedDb)];
                     case 4:
-                        _d.sent();
-                        return [4 /*yield*/, indexedDb.getAllValue('books')];
+                        // Re-fetch all books after adding new ones
+                        _c.sent();
+                        return [4 /*yield*/, indexedDb.getValue('books', 1)];
                     case 5:
-                        _d.sent();
-                        return [4 /*yield*/, indexedDb.deleteValue('books', 1)];
+                        book = _c.sent();
+                        console.log('Single Book:', book);
+                        return [4 /*yield*/, indexedDb.getAllValue('books')];
                     case 6:
-                        _d.sent();
+                        allBooks = _c.sent();
+                        console.log('All Books after Insertions:', allBooks);
+                        // Delete a book by ID and re-fetch
+                        return [4 /*yield*/, indexedDb.deleteValue('books', 1)];
+                    case 7:
+                        // Delete a book by ID and re-fetch
+                        _c.sent(); // Deletes book with ID 1
+                        return [4 /*yield*/, fetchBooks(indexedDb)];
+                    case 8:
+                        _c.sent(); // Re-fetch the updated list
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+        var fetchBooks = function (indexedDb) { return __awaiter(void 0, void 0, void 0, function () {
+            var allBooks;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0: return [4 /*yield*/, indexedDb.getAllValue('books')];
+                    case 1:
+                        allBooks = _c.sent();
+                        setBooks(allBooks); // Update state with the fetched books
                         return [2 /*return*/];
                 }
             });
         }); };
         runIndexDb();
     }, []);
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null));
+    return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null));
 };
 _a = Test;
 __webpack_require__.$Refresh$.register(_a, "Test");
-_c(Test, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+_b(Test, "ww1JAI05mMsgubm5EIyBKqdj5S0=");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Test);
+
+
+const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
+const $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
+	$ReactRefreshModuleId$
+);
+
+function $ReactRefreshModuleRuntime$(exports) {
+	if (true) {
+		let errorOverlay;
+		if (typeof __react_refresh_error_overlay__ !== 'undefined') {
+			errorOverlay = __react_refresh_error_overlay__;
+		}
+		let testMode;
+		if (typeof __react_refresh_test__ !== 'undefined') {
+			testMode = __react_refresh_test__;
+		}
+		return __react_refresh_utils__.executeRuntime(
+			exports,
+			$ReactRefreshModuleId$,
+			module.hot,
+			errorOverlay,
+			testMode
+		);
+	}
+}
+
+if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
+	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
+} else {
+	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
+}
+
+/***/ }),
+
+/***/ "./src/pages/Panel/Panel.tsx":
+/*!***********************************!*\
+  !*** ./src/pages/Panel/Panel.tsx ***!
+  \***********************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Panel_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Panel.css */ "./src/pages/Panel/Panel.css");
+/* harmony import */ var _DB__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DB */ "./src/pages/Panel/DB.tsx");
+/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
+/* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
+__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
+
+var _a, _b;
+
+
+// import IndexedDb from './indexedDb';
+
+var Main = function () {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Welcome to the Main Page"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_DB__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+};
+_a = Main;
+__webpack_require__.$Refresh$.register(_a, "Main");
 var Panel = function () {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_DB__WEBPACK_IMPORTED_MODULE_2__["default"], null),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", { action: "#", id: "input" },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "What would you like to remember?"),
@@ -41190,7 +41288,7 @@ var Panel = function () {
 };
 _b = Panel;
 __webpack_require__.$Refresh$.register(_b, "Panel");
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Test);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Panel);
 
 
 const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
@@ -51938,7 +52036,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("750a7b6620b21037cb8f")
+/******/ 		__webpack_require__.h = () => ("ebc9574d3a9d1812907e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

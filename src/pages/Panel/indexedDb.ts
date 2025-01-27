@@ -73,4 +73,4 @@ class IndexedDb {
     }
 }
 
-export default Panel;
+export default IndexedDb;
