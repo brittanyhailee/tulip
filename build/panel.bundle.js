@@ -41157,7 +41157,7 @@ var Test = function () {
                         return [4 /*yield*/, indexedDb.putValue('books', { name: 'A Game of Thrones' })];
                     case 2:
                         _d.sent();
-                        return [4 /*yield*/, indexedDb.putBulkValue('books', [{ name: 'A Song of Fire and Ice' }, { name: 'Harry Potter and the Chamber of Secrets' }])];
+                        return [4 /*yield*/, indexedDb.putBulkValue('books', [{ name: 'A Song of Fire and Ice' }, { name: 'Red Dirt Heart' }])];
                     case 3:
                         _d.sent();
                         return [4 /*yield*/, indexedDb.getValue('books', 1)];
@@ -41190,7 +41190,7 @@ var Panel = function () {
 };
 _b = Panel;
 __webpack_require__.$Refresh$.register(_b, "Panel");
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Panel);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Test);
 
 
 const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
@@ -51938,7 +51938,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("75326d8d956f3bb5f142")
+/******/ 		__webpack_require__.h = () => ("750a7b6620b21037cb8f")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

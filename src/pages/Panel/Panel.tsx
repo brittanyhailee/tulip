@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Panel.css';
 import IndexedDb from './indexedDb';
 
@@ -8,7 +8,7 @@ export const Test = () => {
           const indexedDb = new IndexedDb('test');
           await indexedDb.createObjectStore(['books', 'students']);
           await indexedDb.putValue('books', { name: 'A Game of Thrones' });
-          await indexedDb.putBulkValue('books', [{ name: 'A Song of Fire and Ice' }, { name: 'Harry Potter and the Chamber of Secrets' }]);
+          await indexedDb.putBulkValue('books', [{ name: 'A Song of Fire and Ice' }, { name: 'Red Dirt Heart' }]);
           await indexedDb.getValue('books', 1);
           await indexedDb.getAllValue('books');
           await indexedDb.deleteValue('books', 1);
@@ -17,6 +17,8 @@ export const Test = () => {
   }, []);
   return (<React.Fragment></React.Fragment>)
 }
+
+
 
 const Panel: React.FC = () => {
 
@@ -36,5 +38,4 @@ const Panel: React.FC = () => {
 
 };
 
-export default Panel;
-
+export default Test;
