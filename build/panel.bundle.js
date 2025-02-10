@@ -41150,13 +41150,16 @@ var Test = function () {
                 switch (_c.label) {
                     case 0:
                         indexedDb = new _indexedDb__WEBPACK_IMPORTED_MODULE_0__["default"]('test');
-                        return [4 /*yield*/, indexedDb.createObjectStore(['books', 'students'])];
+                        return [4 /*yield*/, indexedDb.createObjectStore(['books', 'students', 'memories'])];
                     case 1:
                         _c.sent();
                         // Add data to IndexedDB
-                        return [4 /*yield*/, indexedDb.putValue('books', { name: 'Wicked' })];
+                        return [4 /*yield*/, indexedDb.putValue('memories', { name: 'Don\'t judge each day by the harvest you reap but by the seeds that you plant.' })];
                     case 2:
                         // Add data to IndexedDB
+                        _c.sent();
+                        return [4 /*yield*/, indexedDb.putValue('books', { name: 'Wicked' })];
+                    case 3:
                         _c.sent();
                         return [4 /*yield*/, indexedDb.putBulkValue('books', [
                                 { name: 'Little Women' },
@@ -41164,28 +41167,28 @@ var Test = function () {
                                 { name: 'This is the End' },
                                 { name: 'As the World Caves In' },
                             ])];
-                    case 3:
+                    case 4:
                         _c.sent();
                         // Re-fetch all books after adding new ones
                         return [4 /*yield*/, fetchBooks(indexedDb)];
-                    case 4:
+                    case 5:
                         // Re-fetch all books after adding new ones
                         _c.sent();
                         return [4 /*yield*/, indexedDb.getValue('books', 1)];
-                    case 5:
+                    case 6:
                         book = _c.sent();
                         console.log('Single Book:', book);
                         return [4 /*yield*/, indexedDb.getAllValue('books')];
-                    case 6:
+                    case 7:
                         allBooks = _c.sent();
                         console.log('All Books after Insertions:', allBooks);
                         // Delete a book by ID and re-fetch
                         return [4 /*yield*/, indexedDb.deleteValue('books', 1)];
-                    case 7:
+                    case 8:
                         // Delete a book by ID and re-fetch
                         _c.sent(); // Deletes book with ID 1
                         return [4 /*yield*/, fetchBooks(indexedDb)];
-                    case 8:
+                    case 9:
                         _c.sent(); // Re-fetch the updated list
                         return [2 /*return*/];
                 }
@@ -52036,7 +52039,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("ebc9574d3a9d1812907e")
+/******/ 		__webpack_require__.h = () => ("ab1389623216d3cda544")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

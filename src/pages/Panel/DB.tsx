@@ -7,9 +7,10 @@ export const Test = () => {
   useEffect(() => {
     const runIndexDb = async () => {
       const indexedDb = new IndexedDb('test');
-      await indexedDb.createObjectStore(['books', 'students']);
+      await indexedDb.createObjectStore(['books', 'students','memories']);
 
       // Add data to IndexedDB
+      await indexedDb.putValue('memories', { name: 'Don\'t judge each day by the harvest you reap but by the seeds that you plant.'});
       await indexedDb.putValue('books', { name: 'Wicked' });
       await indexedDb.putBulkValue('books', [
         { name: 'Little Women' },

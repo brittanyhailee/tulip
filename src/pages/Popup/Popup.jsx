@@ -10,9 +10,10 @@ const Popup = () => {
         <div id="app-container">
           <h1 id="title">tulip</h1>
           <div id="memory"> 
-            <h2>share your memory:</h2> 
-         
-            <a href="panel.html"><div class="circle"></div></a>
+            <h2>share your memory:</h2>
+            <a href="panel.html"><div class="circle-1"></div></a>
+            <h2>remember a memory:</h2>
+            <a href="memory.html"><div class="circle-2"></div></a>
             {/* <button onclick="window.location.href=Memory.jsx" class="circle"></button> */}
           </div>
              
