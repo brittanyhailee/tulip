@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-// import IndexedDb from './indexedDb';
+import './Memory.css';
+import IndexedDb from '../../db/indexedDb';
 
 
 const Main = () => {
@@ -15,14 +16,11 @@ const Main = () => {
 const Memory: React.FC = () => {
 
   return (
-    
+
     <div className="container">
+
       <h1>Your memory</h1>
-      <form action="#" id="input">
-        <label>What would you like to remember?</label>
-        <textarea id="memory"></textarea>
-        <input type="submit" value="send"></input>
-      </form>
+      
 
     </div>
     

@@ -1,11 +1,11 @@
 "use strict";
-self["webpackHotUpdatetulip"]("popup",{},
+self["webpackHotUpdatetulip"]("options",{},
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("137509c7454a6ccb013b")
+/******/ 	__webpack_require__.h = () => ("bfe2cfe9ff9a74977e21")
 /******/ })();
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=popup.f9932276c8d54b4da11e.hot-update.js.map
+//# sourceMappingURL=options.1fcb46544364c4aee335.hot-update.js.map
