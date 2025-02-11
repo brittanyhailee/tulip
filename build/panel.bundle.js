@@ -41207,6 +41207,23 @@ var Test = function () {
             });
         }); };
         runIndexDb();
+        function getMemory() {
+            return __awaiter(this, void 0, void 0, function () {
+                var indexedDb, mem;
+                return __generator(this, function (_c) {
+                    switch (_c.label) {
+                        case 0:
+                            indexedDb = new _indexedDb__WEBPACK_IMPORTED_MODULE_0__["default"]('test');
+                            return [4 /*yield*/, indexedDb.getValue('memories', 1)];
+                        case 1:
+                            mem = _c.sent();
+                            console.log(mem);
+                            return [2 /*return*/, mem];
+                    }
+                });
+            });
+        }
+        ;
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null));
 };
@@ -52039,7 +52056,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("ab1389623216d3cda544")
+/******/ 		__webpack_require__.h = () => ("137509c7454a6ccb013b")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

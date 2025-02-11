@@ -4,6 +4,8 @@ import Greetings from '../../containers/Greetings/Greetings';
 import './Popup.css';
 import camera from '../../assets/img/camera.png';
 
+
+
 const Popup = () => {
   return (
       <body>
@@ -14,6 +16,7 @@ const Popup = () => {
             <a href="panel.html"><div class="circle-1"></div></a>
             <h2>remember a memory:</h2>
             <a href="memory.html"><div class="circle-2"></div></a>
+
             {/* <button onclick="window.location.href=Memory.jsx" class="circle"></button> */}
           </div>
              
