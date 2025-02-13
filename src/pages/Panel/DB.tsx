@@ -42,7 +42,6 @@ export const Test = () => {
 
     runIndexDb();
 
-    
 
     async function getMemory() {
       const indexedDb = new IndexedDb('test');

@@ -41,16 +41,15 @@ export const Test = () => {
     };
 
     runIndexDb();
-
-    
-
-    async function getMemory() {
-      const indexedDb = new IndexedDb('test');
-      const mem = await indexedDb.getValue('memories', 1);
-      console.log(mem);
-      return mem;
-    };
   }, []);
+
+  const getMemory = async() =>{
+    const indexedDb = new IndexedDb('test');
+    const mem = indexedDb.getValue('memories', 1);
+    console.log(mem);
+    return mem;
+    };
+
   
   return (<React.Fragment></React.Fragment>)
 
