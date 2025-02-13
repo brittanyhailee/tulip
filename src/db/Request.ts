@@ -30,12 +30,17 @@ export function getValueFromMemory() {
         const value = (event.target as IDBRequest).result;
         if (value) {
             console.log("Value retrieved: ", value);
+            console.log("Memory: ", value.name);
+            return value.name;
         } else {
             console.log("No value found for key: ", key);
+            return ("No value found for key: " + key);
         }
     };
 
     getRequest.onerror = (event) => {
         console.error("Error getting value: ", event);
     };
+    return "";
 }
+

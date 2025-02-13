@@ -40977,14 +40977,18 @@ function getValueFromMemory() {
         var value = event.target.result;
         if (value) {
             console.log("Value retrieved: ", value);
+            console.log("Memory: ", value.name);
+            return value.name;
         }
         else {
             console.log("No value found for key: ", key);
+            return ("No value found for key: " + key);
         }
     };
     getRequest.onerror = function (event) {
         console.error("Error getting value: ", event);
     };
+    return "";
 }
 
 
@@ -41041,6 +41045,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
 var _a, _b;
+var _c;
+_c = __webpack_require__.$Refresh$.signature();
 
 
 
@@ -41051,13 +41057,25 @@ var Main = function () {
 _a = Main;
 __webpack_require__.$Refresh$.register(_a, "Main");
 var Memory = function () {
+    _c();
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''), value = _d[0], setValue = _d[1];
+    var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), isClicked = _e[0], setIsClicked = _e[1];
+    var handleClick = function () {
+        var valueFromMemory = (0,_db_Request__WEBPACK_IMPORTED_MODULE_2__.getValueFromMemory)();
+        setValue(valueFromMemory);
+        setIsClicked(true);
+    };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "memory goes here"),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: _db_Request__WEBPACK_IMPORTED_MODULE_2__.getValueFromMemory }, "Click me please...")));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: handleClick }, "Click me please..."),
+        isClicked && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "memory: "),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, value)))));
 };
 _b = Memory;
 __webpack_require__.$Refresh$.register(_b, "Memory");
+_c(Memory, "cHgW4GN1+V9NHLBtd5gYma9b7IM=");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Memory);
 
 
@@ -51257,7 +51275,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("3b7a67dbb3b1544faf85")
+/******/ 		__webpack_require__.h = () => ("c0d07c6370143d3cd5ca")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

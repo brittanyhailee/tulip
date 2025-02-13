@@ -16,6 +16,14 @@ const Main = () => {
 };
 
 const Memory: React.FC = () => {
+  const [value, setValue] = useState<string>('');
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+
+  const handleClick = () => {
+    const valueFromMemory = getValueFromMemory();
+    setValue(valueFromMemory);
+    setIsClicked(true);
+  }
  
 
   return (
@@ -24,8 +32,14 @@ const Memory: React.FC = () => {
 
       <h1>Your memory</h1>
       <p>memory goes here</p>
-      <button onClick={getValueFromMemory}>Click me please...</button>
-
+      {/* <button onClick={getValueFromMemory}>Click me please...</button> */}
+      <button onClick={handleClick}>Click me please...</button>
+      {isClicked && (
+        <div>
+          <h4>memory: </h4>
+          <p>{value}</p>
+          </div>
+      )}
     </div>
     
   );
