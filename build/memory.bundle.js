@@ -40970,25 +40970,26 @@ request.onupgradeneeded = function (event) {
     db.createObjectStore(storeName, { keyPath: 'id' });
 };
 function getValueFromMemory() {
-    var transaction = db.transaction(storeName, "readonly");
-    var store = transaction.objectStore(storeName);
-    var getRequest = store.get(key);
-    getRequest.onsuccess = function (event) {
-        var value = event.target.result;
-        if (value) {
-            console.log("Value retrieved: ", value);
-            console.log("Memory: ", value.name);
-            return value.name;
-        }
-        else {
-            console.log("No value found for key: ", key);
-            return ("No value found for key: " + key);
-        }
-    };
-    getRequest.onerror = function (event) {
-        console.error("Error getting value: ", event);
-    };
-    return "";
+    return new Promise(function (resolve, reject) {
+        var transaction = db.transaction(storeName, "readonly");
+        var store = transaction.objectStore(storeName);
+        var getRequest = store.get(key);
+        getRequest.onsuccess = function (event) {
+            var value = event.target.result;
+            if (value) {
+                console.log("Value retrieved: ", value);
+                console.log("Memory: ", value.name);
+                resolve(JSON.stringify(value.name));
+            }
+            else {
+                console.log("No value found for key: ", key);
+                resolve("No value found for key: " + key);
+            }
+        };
+        getRequest.onerror = function (event) {
+            console.error("Error getting value: ", event);
+        };
+    });
 }
 
 
@@ -41058,24 +41059,40 @@ _a = Main;
 __webpack_require__.$Refresh$.register(_a, "Main");
 var Memory = function () {
     _c();
-    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''), value = _d[0], setValue = _d[1];
-    var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), isClicked = _e[0], setIsClicked = _e[1];
+    // const [value, setValue] = useState<string>('');
+    // const [isClicked, setIsClicked] = useState<boolean>(false);
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''), memory = _d[0], setMemory = _d[1];
+    // const handleClick = () => {
+    //   const valueFromMemory = getValueFromMemory();
+    //   setValue(valueFromMemory);
+    //   setIsClicked(true);
+    // }
+    function fetchMemory() {
+        return new Promise(function (resolve) {
+            setTimeout(function () {
+                resolve((0,_db_Request__WEBPACK_IMPORTED_MODULE_2__.getValueFromMemory)());
+            }, 2000);
+        });
+    }
     var handleClick = function () {
-        var valueFromMemory = (0,_db_Request__WEBPACK_IMPORTED_MODULE_2__.getValueFromMemory)();
-        setValue(valueFromMemory);
-        setIsClicked(true);
+        (0,_db_Request__WEBPACK_IMPORTED_MODULE_2__.getValueFromMemory)().then(function (memory) {
+            console.log("the memory is: ", memory);
+            setMemory(memory);
+        }).catch(function (error) {
+            console.log("Error fetching memory: ", error);
+        });
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "memory goes here"),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: handleClick }, "Click me please..."),
-        isClicked && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { id: "memory-btn", onClick: handleClick }, "Click me please..."),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "memory: "),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, value)))));
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, memory))));
 };
 _b = Memory;
 __webpack_require__.$Refresh$.register(_b, "Memory");
-_c(Memory, "cHgW4GN1+V9NHLBtd5gYma9b7IM=");
+_c(Memory, "fX6AIh86/DHIVZFERQK27/xnLLY=");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Memory);
 
 
@@ -51275,7 +51292,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("c0d07c6370143d3cd5ca")
+/******/ 		__webpack_require__.h = () => ("9e419cff98d1ee06daea")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

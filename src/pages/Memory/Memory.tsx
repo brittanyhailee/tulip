@@ -16,15 +16,34 @@ const Main = () => {
 };
 
 const Memory: React.FC = () => {
-  const [value, setValue] = useState<string>('');
-  const [isClicked, setIsClicked] = useState<boolean>(false);
+  // const [value, setValue] = useState<string>('');
+  // const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [memory, setMemory] = useState<string>('');
+  
+  // const handleClick = () => {
+  //   const valueFromMemory = getValueFromMemory();
+  //   setValue(valueFromMemory);
+  //   setIsClicked(true);
+  // }
+
+  function fetchMemory(): Promise<string> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(getValueFromMemory());
+      }, 2000); 
+
+    });
+  }
 
   const handleClick = () => {
-    const valueFromMemory = getValueFromMemory();
-    setValue(valueFromMemory);
-    setIsClicked(true);
+    getValueFromMemory().then((memory) => {
+      console.log("the memory is: ", memory);
+      setMemory(memory);
+    }).catch((error) => {
+      console.log("Error fetching memory: ", error);
+    });
   }
- 
+
 
   return (
 
@@ -33,13 +52,12 @@ const Memory: React.FC = () => {
       <h1>Your memory</h1>
       <p>memory goes here</p>
       {/* <button onClick={getValueFromMemory}>Click me please...</button> */}
-      <button onClick={handleClick}>Click me please...</button>
-      {isClicked && (
-        <div>
-          <h4>memory: </h4>
-          <p>{value}</p>
-          </div>
-      )}
+      <button id="memory-btn" onClick={handleClick}>Click me please...</button>
+      <div>
+        <h4>memory: </h4>
+        <p>{memory}</p>
+      </div>
+      
     </div>
     
   );
