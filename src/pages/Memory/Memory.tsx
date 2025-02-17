@@ -51,7 +51,7 @@ const Memory: React.FC = () => {
 
       <h1>Your memory</h1>
       <p>memory goes here</p>
-      {/* <button onClick={getValueFromMemory}>Click me please...</button> */}
+   
       <button id="memory-btn" onClick={handleClick}>Click me please...</button>
       <div>
         <h4>memory: </h4>
