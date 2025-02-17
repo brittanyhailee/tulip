@@ -14,10 +14,19 @@ html {
 #input {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 }
 
 #memory {
   height: 100px;
   border-radius: 10px;
+  width: 300px;
+}
+
+button {
+  margin: 15px;
+  width: 70px;
+  height: 30px;
 }

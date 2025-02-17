@@ -1,5 +1,6 @@
 const storeName = 'memories';
 const dbName = 'test';
+
 const key = 1;
 let db : IDBDatabase;
 const request = indexedDB.open(dbName, 1);
