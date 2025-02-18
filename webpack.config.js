@@ -190,7 +190,8 @@ var options = {
       filename: 'newtab.html',
       chunks: ['newtab'],
       cache: false,
-    }), new HtmlWebpackPlugin({
+    }), 
+    new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'pages', 'Memory', 'index.html'),
       filename: 'memory.html',
       chunks: ['memory'],
