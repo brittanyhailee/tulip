@@ -25,11 +25,15 @@ const Panel: React.FC = () => {
 
 
   const handleClick = () => {
-    if (textareaRef.current) {
-      console.log(textareaRef.current.value);
+    let memory = "";
+    const text = textareaRef.current.value.trim();
 
+    if (text.length !== 0) {
+      console.log(textareaRef.current.value);
+      memory = textareaRef.current.value;
+      db.putValue('memories', {name: memory});
     }
-    db.putValue('memories', {name: textareaRef.current.value} );
+    
 
   }
 

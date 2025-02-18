@@ -41534,10 +41534,13 @@ var Panel = function () {
     var db = new _db_indexedDb__WEBPACK_IMPORTED_MODULE_3__["default"]('test');
     db.createObjectStore(['memories']);
     var handleClick = function () {
-        if (textareaRef.current) {
+        var memory = "";
+        var text = textareaRef.current.value.trim();
+        if (text.length !== 0) {
             console.log(textareaRef.current.value);
+            memory = textareaRef.current.value;
+            db.putValue('memories', { name: memory });
         }
-        db.putValue('memories', { name: textareaRef.current.value });
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
@@ -52297,7 +52300,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("1f5bfebf39c6b5878394")
+/******/ 		__webpack_require__.h = () => ("c118c61070ab36540f25")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
