@@ -102,28 +102,3 @@ export function getValueFromMemory(): Promise<string> {
 
     });
 }
-
-
-export function getMaxId(callback) {
-    request.onsuccess = function() {
-        var db = request.result;
-        var transaction = db.transaction(storeName, 'readonly')
-        var objectStore = transaction.objectStore(storeName);
-        var index = objectStore.index('id')
-        var openCursorRequest = index.openCursor(null, 'prev');
-        var maxIdObject: string | null = null;
-
-        openCursorRequest.onsuccess = function(event) {
-            if (event.target.result) {
-                maxIdObject = event.target.result.value;
-            }
-            console.log("max id is " + maxIdObject);
-        };
-        transaction.oncomplete = function(event) {
-            console.log("max id is " + maxIdObject);
-            if (callback) {
-                callback(maxIdObject)
-            }
-        }
-    }
-}
