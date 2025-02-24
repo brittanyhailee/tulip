@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './Memory.css';
 import IndexedDb from '../../db/indexedDb';
-import {getValueFromMemory} from '../../db/Request';
+import {getMaxId, getSize, getValueFromMemory} from '../../db/Request';
 
 
 
@@ -42,6 +42,8 @@ const Memory: React.FC = () => {
     }).catch((error) => {
       console.log("Error fetching memory: ", error);
     });
+    getSize()
+  
   }
 
 
