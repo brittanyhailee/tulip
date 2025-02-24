@@ -41042,19 +41042,28 @@ var dbSize = function (db, dbName) { return __awaiter(void 0, void 0, void 0, fu
             })];
     });
 }); };
+var maxKey = 0;
 function getSize() {
     var transaction = db.transaction(storeName, "readonly");
     var objectStore = transaction.objectStore(storeName);
     var countRequest = objectStore.count();
     countRequest.onsuccess = function () {
+        maxKey = countRequest.result;
         console.log(countRequest.result);
+        return countRequest.result;
     };
+}
+function getRandomKey() {
+    var min = 1;
+    var max = maxKey;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function getValueFromMemory() {
     return new Promise(function (resolve, reject) {
         var transaction = db.transaction(storeName, "readonly");
         var store = transaction.objectStore(storeName);
-        var key = 1;
+        // const key = 1;
+        var key = getRandomKey();
         var getRequest = store.get(key);
         getRequest.onsuccess = function (event) {
             var value = event.target.result;
@@ -51397,7 +51406,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("52d5c7badf3284bedd1e")
+/******/ 		__webpack_require__.h = () => ("937a4a05d77a4fbd21c2")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -56,16 +56,22 @@ export const dbSize = async (db, dbName) => {
     });     
 };
 
-
+var maxKey = 0;
 export function getSize() {
     const transaction = db.transaction(storeName, "readonly");
     var objectStore = transaction.objectStore(storeName);
     const countRequest = objectStore.count();
     countRequest.onsuccess = () => {
+        maxKey = countRequest.result;
         console.log(countRequest.result);
-
+        return countRequest.result;
     }
-    
+}
+
+function getRandomKey() {
+    const min = 1;
+    const max = maxKey;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 
@@ -73,7 +79,8 @@ export function getValueFromMemory(): Promise<string> {
     return new Promise((resolve, reject) => {
         const transaction = db.transaction(storeName, "readonly");
         const store = transaction.objectStore(storeName);
-        const key = 1;
+        // const key = 1;
+        const key = getRandomKey();
         const getRequest = store.get(key);
 
 
