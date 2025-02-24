@@ -40947,6 +40947,9 @@ module.exports = styleTagTransform;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "dbSize": () => (/* binding */ dbSize),
+/* harmony export */   "getMaxId": () => (/* binding */ getMaxId),
+/* harmony export */   "getSize": () => (/* binding */ getSize),
 /* harmony export */   "getValueFromMemory": () => (/* binding */ getValueFromMemory)
 /* harmony export */ });
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
@@ -41039,6 +41042,14 @@ var dbSize = function (db, dbName) { return __awaiter(void 0, void 0, void 0, fu
             })];
     });
 }); };
+function getSize() {
+    var transaction = db.transaction(storeName, "readonly");
+    var objectStore = transaction.objectStore(storeName);
+    var countRequest = objectStore.count();
+    countRequest.onsuccess = function () {
+        console.log(countRequest.result);
+    };
+}
 function getValueFromMemory() {
     return new Promise(function (resolve, reject) {
         var transaction = db.transaction(storeName, "readonly");
@@ -41061,6 +41072,28 @@ function getValueFromMemory() {
             console.error("Error getting value: ", event);
         };
     });
+}
+function getMaxId(callback) {
+    request.onsuccess = function () {
+        var db = request.result;
+        var transaction = db.transaction(storeName, 'readonly');
+        var objectStore = transaction.objectStore(storeName);
+        var index = objectStore.index('id');
+        var openCursorRequest = index.openCursor(null, 'prev');
+        var maxIdObject = null;
+        openCursorRequest.onsuccess = function (event) {
+            if (event.target.result) {
+                maxIdObject = event.target.result.value;
+            }
+            console.log("max id is " + maxIdObject);
+        };
+        transaction.oncomplete = function (event) {
+            console.log("max id is " + maxIdObject);
+            if (callback) {
+                callback(maxIdObject);
+            }
+        };
+    };
 }
 
 
@@ -41152,6 +41185,7 @@ var Memory = function () {
         }).catch(function (error) {
             console.log("Error fetching memory: ", error);
         });
+        (0,_db_Request__WEBPACK_IMPORTED_MODULE_2__.getSize)();
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
@@ -51363,7 +51397,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("43d8cdcd451797b4be7d")
+/******/ 		__webpack_require__.h = () => ("52d5c7badf3284bedd1e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

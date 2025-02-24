@@ -19,7 +19,7 @@ request.onupgradeneeded = (event : IDBVersionChangeEvent) => {
     db.createObjectStore(storeName, {keyPath: 'id'});
 };
 
-const dbSize = async (db, dbName) => {
+export const dbSize = async (db, dbName) => {
     return new Promise((resolve, reject) => {
 
             const tx = db.transaction([dbName], 'readonly');
@@ -57,6 +57,18 @@ const dbSize = async (db, dbName) => {
 };
 
 
+export function getSize() {
+    const transaction = db.transaction(storeName, "readonly");
+    var objectStore = transaction.objectStore(storeName);
+    const countRequest = objectStore.count();
+    countRequest.onsuccess = () => {
+        console.log(countRequest.result);
+
+    }
+    
+}
+
+
 export function getValueFromMemory(): Promise<string> {
     return new Promise((resolve, reject) => {
         const transaction = db.transaction(storeName, "readonly");
@@ -82,8 +94,29 @@ export function getValueFromMemory(): Promise<string> {
 
 
     });
-    
-
-
 }
 
+
+export function getMaxId(callback) {
+    request.onsuccess = function() {
+        var db = request.result;
+        var transaction = db.transaction(storeName, 'readonly')
+        var objectStore = transaction.objectStore(storeName);
+        var index = objectStore.index('id')
+        var openCursorRequest = index.openCursor(null, 'prev');
+        var maxIdObject: string | null = null;
+
+        openCursorRequest.onsuccess = function(event) {
+            if (event.target.result) {
+                maxIdObject = event.target.result.value;
+            }
+            console.log("max id is " + maxIdObject);
+        };
+        transaction.oncomplete = function(event) {
+            console.log("max id is " + maxIdObject);
+            if (callback) {
+                callback(maxIdObject)
+            }
+        }
+    }
+}
