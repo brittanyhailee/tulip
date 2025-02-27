@@ -101,33 +101,39 @@ function getRandomKey() {
 export function getValueFromMemory(): Promise<string> {
     return new Promise((resolve, reject) => {
         getSize();
-        const transaction = db.transaction(storeName, "readonly");
-        const store = transaction.objectStore(storeName);
-        // const key = 1;
+        var key = getRandomKey();
+        if (key != undefined) {
+            
+            const transaction = db.transaction(storeName, "readonly");
+            const store = transaction.objectStore(storeName);
+            // const key = 1;
 
-        var key = getRandomKey(); // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
-        if (key == undefined) {
-            key = 1;
+             // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
+            // if (key == undefined) {
+            //     key = 1;
+            // }
+        
+            console.log("the key we are getting is " + key);
+            const getRequest = store.get(key);
+
+
+            getRequest.onsuccess = (event) => {
+                const value = (event.target as IDBRequest).result;
+                if (value) {
+                    console.log("Value retrieved: ", value);
+                    console.log("Memory: ", value.name);
+                    resolve(JSON.stringify(value.name));
+                } else {
+                    console.log("No value found for key: ", key);
+                    resolve("No value found for key: " + key);
+                }
+            };
+            getRequest.onerror = (event) => {
+                console.error("Error getting value: ", event);
+            };
+        } else {
+            console.log('key is currently undefined');
         }
-     
-        console.log("the key we are getting is " + key);
-        const getRequest = store.get(key);
-
-
-        getRequest.onsuccess = (event) => {
-            const value = (event.target as IDBRequest).result;
-            if (value) {
-                console.log("Value retrieved: ", value);
-                console.log("Memory: ", value.name);
-                resolve(JSON.stringify(value.name));
-            } else {
-                console.log("No value found for key: ", key);
-                resolve("No value found for key: " + key);
-            }
-        };
-        getRequest.onerror = (event) => {
-            console.error("Error getting value: ", event);
-        };
 
 
     });

@@ -139,28 +139,36 @@ function getRandomKey() {
 function getValueFromMemory() {
     return new Promise(function (resolve, reject) {
         getSize();
-        var transaction = db.transaction(storeName, "readonly");
-        var store = transaction.objectStore(storeName);
-        // const key = 1;
-        var key = getRandomKey(); // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
-        if (key == undefined)
+        var key = getRandomKey();
+        if (key != undefined) {
+            var transaction = db.transaction(storeName, "readonly");
+            var store = transaction.objectStore(storeName);
+            // const key = 1;
+            // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
+            // if (key == undefined) {
+            //     key = 1;
+            // }
             console.log("the key we are getting is " + key);
-        var getRequest = store.get(key);
-        getRequest.onsuccess = function (event) {
-            var value = event.target.result;
-            if (value) {
-                console.log("Value retrieved: ", value);
-                console.log("Memory: ", value.name);
-                resolve(JSON.stringify(value.name));
-            }
-            else {
-                console.log("No value found for key: ", key);
-                resolve("No value found for key: " + key);
-            }
-        };
-        getRequest.onerror = function (event) {
-            console.error("Error getting value: ", event);
-        };
+            var getRequest = store.get(key);
+            getRequest.onsuccess = function (event) {
+                var value = event.target.result;
+                if (value) {
+                    console.log("Value retrieved: ", value);
+                    console.log("Memory: ", value.name);
+                    resolve(JSON.stringify(value.name));
+                }
+                else {
+                    console.log("No value found for key: ", key);
+                    resolve("No value found for key: " + key);
+                }
+            };
+            getRequest.onerror = function (event) {
+                console.error("Error getting value: ", event);
+            };
+        }
+        else {
+            console.log('key is currently undefined');
+        }
     });
 }
 
@@ -202,9 +210,9 @@ if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Pr
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("3f39f03719074eb43d3f")
+/******/ 	__webpack_require__.h = () => ("4067b2c967fa9fd7ab7e")
 /******/ })();
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=memory.4de4b18fffa8b2a1442a.hot-update.js.map
+//# sourceMappingURL=memory.d7dba0012e5a37b4d2a8.hot-update.js.map

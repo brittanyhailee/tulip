@@ -41077,30 +41077,36 @@ function getRandomKey() {
 function getValueFromMemory() {
     return new Promise(function (resolve, reject) {
         getSize();
-        var transaction = db.transaction(storeName, "readonly");
-        var store = transaction.objectStore(storeName);
-        // const key = 1;
-        var key = getRandomKey(); // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
-        if (key == undefined) {
-            key = 1;
+        var key = getRandomKey();
+        if (key != undefined) {
+            var transaction = db.transaction(storeName, "readonly");
+            var store = transaction.objectStore(storeName);
+            // const key = 1;
+            // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
+            // if (key == undefined) {
+            //     key = 1;
+            // }
+            console.log("the key we are getting is " + key);
+            var getRequest = store.get(key);
+            getRequest.onsuccess = function (event) {
+                var value = event.target.result;
+                if (value) {
+                    console.log("Value retrieved: ", value);
+                    console.log("Memory: ", value.name);
+                    resolve(JSON.stringify(value.name));
+                }
+                else {
+                    console.log("No value found for key: ", key);
+                    resolve("No value found for key: " + key);
+                }
+            };
+            getRequest.onerror = function (event) {
+                console.error("Error getting value: ", event);
+            };
         }
-        console.log("the key we are getting is " + key);
-        var getRequest = store.get(key);
-        getRequest.onsuccess = function (event) {
-            var value = event.target.result;
-            if (value) {
-                console.log("Value retrieved: ", value);
-                console.log("Memory: ", value.name);
-                resolve(JSON.stringify(value.name));
-            }
-            else {
-                console.log("No value found for key: ", key);
-                resolve("No value found for key: " + key);
-            }
-        };
-        getRequest.onerror = function (event) {
-            console.error("Error getting value: ", event);
-        };
+        else {
+            console.log('key is currently undefined');
+        }
     });
 }
 
@@ -51399,7 +51405,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("b68b5796f03578e6ebdb")
+/******/ 		__webpack_require__.h = () => ("4067b2c967fa9fd7ab7e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
