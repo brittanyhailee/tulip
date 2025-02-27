@@ -40948,7 +40948,6 @@ module.exports = styleTagTransform;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "dbSize": () => (/* binding */ dbSize),
-/* harmony export */   "getMaxId": () => (/* binding */ getMaxId),
 /* harmony export */   "getSize": () => (/* binding */ getSize),
 /* harmony export */   "getValueFromMemory": () => (/* binding */ getValueFromMemory)
 /* harmony export */ });
@@ -41043,9 +41042,18 @@ var dbSize = function (db, dbName) { return __awaiter(void 0, void 0, void 0, fu
     });
 }); };
 var maxKey = 0;
+var keysArray = [];
+var randomKeyTest = 0;
 function getSize() {
     var transaction = db.transaction(storeName, "readonly");
     var objectStore = transaction.objectStore(storeName);
+    // Testing
+    var getAllKeysRequest = objectStore.getAllKeys();
+    getAllKeysRequest.onsuccess = function () {
+        keysArray = getAllKeysRequest.result;
+        console.log("keysArray: " + keysArray);
+    };
+    // End of test
     var countRequest = objectStore.count();
     countRequest.onsuccess = function () {
         maxKey = countRequest.result;
@@ -41055,8 +41063,13 @@ function getSize() {
 }
 function getRandomKey() {
     var min = 1;
-    var max = maxKey;
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    // const max = maxKey;
+    // Testing
+    var max = keysArray.length - 1;
+    // const key = keysArray[randomKeyTest];
+    // End of Testing
+    var setRandomKey = Math.floor(Math.random() * (max - min + 1)) + min;
+    return keysArray[setRandomKey];
 }
 function getValueFromMemory() {
     return new Promise(function (resolve, reject) {
@@ -41064,6 +41077,7 @@ function getValueFromMemory() {
         var store = transaction.objectStore(storeName);
         // const key = 1;
         var key = getRandomKey();
+        console.log("the key we are getting is " + key);
         var getRequest = store.get(key);
         getRequest.onsuccess = function (event) {
             var value = event.target.result;
@@ -41081,28 +41095,6 @@ function getValueFromMemory() {
             console.error("Error getting value: ", event);
         };
     });
-}
-function getMaxId(callback) {
-    request.onsuccess = function () {
-        var db = request.result;
-        var transaction = db.transaction(storeName, 'readonly');
-        var objectStore = transaction.objectStore(storeName);
-        var index = objectStore.index('id');
-        var openCursorRequest = index.openCursor(null, 'prev');
-        var maxIdObject = null;
-        openCursorRequest.onsuccess = function (event) {
-            if (event.target.result) {
-                maxIdObject = event.target.result.value;
-            }
-            console.log("max id is " + maxIdObject);
-        };
-        transaction.oncomplete = function (event) {
-            console.log("max id is " + maxIdObject);
-            if (callback) {
-                callback(maxIdObject);
-            }
-        };
-    };
 }
 
 
@@ -51406,7 +51398,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("937a4a05d77a4fbd21c2")
+/******/ 		__webpack_require__.h = () => ("a1431b9a29c751ed3342")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -57,21 +57,44 @@ export const dbSize = async (db, dbName) => {
 };
 
 var maxKey = 0;
+let keysArray: string | any[] = []
+var randomKeyTest = 0;
+
 export function getSize() {
     const transaction = db.transaction(storeName, "readonly");
     var objectStore = transaction.objectStore(storeName);
+
+    // Testing
+    const getAllKeysRequest = objectStore.getAllKeys();
+    getAllKeysRequest.onsuccess = () => {
+        keysArray = getAllKeysRequest.result;
+        console.log("keysArray: " + keysArray);
+    }
+    // End of test
+
     const countRequest = objectStore.count();
     countRequest.onsuccess = () => {
         maxKey = countRequest.result;
         console.log(countRequest.result);
+
         return countRequest.result;
     }
 }
 
 function getRandomKey() {
+
     const min = 1;
-    const max = maxKey;
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    // const max = maxKey;
+    // Testing
+    const max = keysArray.length-1;
+    // const key = keysArray[randomKeyTest];
+    // End of Testing
+
+    const setRandomKey =  Math.floor(Math.random() * (max - min + 1)) + min;
+    return keysArray[setRandomKey];
+
+    
+    
 }
 
 
@@ -81,6 +104,8 @@ export function getValueFromMemory(): Promise<string> {
         const store = transaction.objectStore(storeName);
         // const key = 1;
         const key = getRandomKey();
+     
+        console.log("the key we are getting is " + key);
         const getRequest = store.get(key);
 
 
