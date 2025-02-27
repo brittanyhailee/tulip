@@ -40948,7 +40948,6 @@ module.exports = styleTagTransform;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "dbSize": () => (/* binding */ dbSize),
-/* harmony export */   "getSize": () => (/* binding */ getSize),
 /* harmony export */   "getValueFromMemory": () => (/* binding */ getValueFromMemory)
 /* harmony export */ });
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
@@ -41045,21 +41044,25 @@ var maxKey = 0;
 var keysArray = [];
 var randomKeyTest = 0;
 function getSize() {
-    var transaction = db.transaction(storeName, "readonly");
-    var objectStore = transaction.objectStore(storeName);
-    // Testing
-    var getAllKeysRequest = objectStore.getAllKeys();
-    getAllKeysRequest.onsuccess = function () {
-        keysArray = getAllKeysRequest.result;
-        console.log("keysArray: " + keysArray);
-    };
-    // End of test
-    var countRequest = objectStore.count();
-    countRequest.onsuccess = function () {
-        maxKey = countRequest.result;
-        console.log(countRequest.result);
-        return countRequest.result;
-    };
+    return __awaiter(this, void 0, void 0, function () {
+        var transaction, objectStore, getAllKeysRequest, countRequest;
+        return __generator(this, function (_a) {
+            transaction = db.transaction(storeName, "readonly");
+            objectStore = transaction.objectStore(storeName);
+            getAllKeysRequest = objectStore.getAllKeys();
+            getAllKeysRequest.onsuccess = function () {
+                keysArray = getAllKeysRequest.result;
+                console.log("keysArray: " + keysArray);
+            };
+            countRequest = objectStore.count();
+            countRequest.onsuccess = function () {
+                maxKey = countRequest.result;
+                console.log(countRequest.result);
+                return countRequest.result;
+            };
+            return [2 /*return*/];
+        });
+    });
 }
 function getRandomKey() {
     var min = 1;
@@ -41073,10 +41076,14 @@ function getRandomKey() {
 }
 function getValueFromMemory() {
     return new Promise(function (resolve, reject) {
+        getSize();
         var transaction = db.transaction(storeName, "readonly");
         var store = transaction.objectStore(storeName);
         // const key = 1;
-        var key = getRandomKey();
+        var key = getRandomKey(); // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
+        if (key == undefined) {
+            key = 1;
+        }
         console.log("the key we are getting is " + key);
         var getRequest = store.get(key);
         getRequest.onsuccess = function (event) {
@@ -41167,11 +41174,6 @@ var Memory = function () {
     // const [value, setValue] = useState<string>('');
     // const [isClicked, setIsClicked] = useState<boolean>(false);
     var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''), memory = _d[0], setMemory = _d[1];
-    // const handleClick = () => {
-    //   const valueFromMemory = getValueFromMemory();
-    //   setValue(valueFromMemory);
-    //   setIsClicked(true);
-    // }
     function fetchMemory() {
         return new Promise(function (resolve) {
             setTimeout(function () {
@@ -41186,7 +41188,6 @@ var Memory = function () {
         }).catch(function (error) {
             console.log("Error fetching memory: ", error);
         });
-        (0,_db_Request__WEBPACK_IMPORTED_MODULE_2__.getSize)();
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
@@ -51398,7 +51399,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("a1431b9a29c751ed3342")
+/******/ 		__webpack_require__.h = () => ("b68b5796f03578e6ebdb")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -60,7 +60,7 @@ var maxKey = 0;
 let keysArray: string | any[] = []
 var randomKeyTest = 0;
 
-export function getSize() {
+async function getSize() {
     const transaction = db.transaction(storeName, "readonly");
     var objectStore = transaction.objectStore(storeName);
 
@@ -85,6 +85,7 @@ function getRandomKey() {
 
     const min = 1;
     // const max = maxKey;
+
     // Testing
     const max = keysArray.length-1;
     // const key = keysArray[randomKeyTest];
@@ -92,7 +93,6 @@ function getRandomKey() {
 
     const setRandomKey =  Math.floor(Math.random() * (max - min + 1)) + min;
     return keysArray[setRandomKey];
-
     
     
 }
@@ -100,10 +100,15 @@ function getRandomKey() {
 
 export function getValueFromMemory(): Promise<string> {
     return new Promise((resolve, reject) => {
+        getSize();
         const transaction = db.transaction(storeName, "readonly");
         const store = transaction.objectStore(storeName);
         // const key = 1;
-        const key = getRandomKey();
+
+        var key = getRandomKey(); // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
+        if (key == undefined) {
+            key = 1;
+        }
      
         console.log("the key we are getting is " + key);
         const getRequest = store.get(key);

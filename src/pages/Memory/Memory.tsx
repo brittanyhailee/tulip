@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './Memory.css';
 import IndexedDb from '../../db/indexedDb';
-import {getMaxId, getSize, getValueFromMemory} from '../../db/Request';
+import {getSize, getValueFromMemory} from '../../db/Request';
 
 
 
@@ -20,11 +20,7 @@ const Memory: React.FC = () => {
   // const [isClicked, setIsClicked] = useState<boolean>(false);
   const [memory, setMemory] = useState<string>('');
   
-  // const handleClick = () => {
-  //   const valueFromMemory = getValueFromMemory();
-  //   setValue(valueFromMemory);
-  //   setIsClicked(true);
-  // }
+
 
   function fetchMemory(): Promise<string> {
     return new Promise((resolve) => {
@@ -42,7 +38,7 @@ const Memory: React.FC = () => {
     }).catch((error) => {
       console.log("Error fetching memory: ", error);
     });
-    getSize()
+    // getSize()
   
   }
 
