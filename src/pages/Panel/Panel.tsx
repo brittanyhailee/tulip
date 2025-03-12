@@ -22,7 +22,7 @@ const  Main = ({handleClick, textareaRef}: {handleClick: () => void, textareaRef
 
 const Panel: React.FC = () => {
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
-  const db = new IndexedDb('test');
+  const db = new IndexedDb('tulip');
   db.createObjectStore(['memories']);
   let dateTime = new Date();
   console.log("current date is " + dateTime);

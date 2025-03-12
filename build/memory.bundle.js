@@ -40991,7 +40991,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     }
 };
 var storeName = 'memories';
-var dbName = 'test';
+var dbName = 'tulip';
 var db;
 var request = indexedDB.open(dbName, 1);
 request.onerror = function (event) {
@@ -51405,7 +51405,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("bc4f4357b2b8b319f84c")
+/******/ 		__webpack_require__.h = () => ("0c55b2e5ef8e257200a2")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

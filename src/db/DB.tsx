@@ -6,45 +6,45 @@ export const Test = () => {
 
   useEffect(() => {
     const runIndexDb = async () => {
-      const indexedDb = new IndexedDb('test');
-      await indexedDb.createObjectStore(['books', 'students','memories']);
+      const indexedDb = new IndexedDb('tulip');
+      await indexedDb.createObjectStore(['memories']);
 
       // Add data to IndexedDB
-      await indexedDb.putValue('memories', { name: 'Don\'t judge each day by the harvest you reap but by the seeds that you plant.'});
-      await indexedDb.putValue('books', { name: 'Wicked' });
-      await indexedDb.putBulkValue('books', [
-        { name: 'Little Women' },
-        { name: 'Kafka on the Shore' },
-        { name: 'This is the End' },
-        { name: 'As the World Caves In' },
-      ]);
+      // await indexedDb.putValue('memories', { name: 'Don\'t judge each day by the harvest you reap but by the seeds that you plant.'});
+      // await indexedDb.putValue('books', { name: 'Wicked' });
+      // await indexedDb.putBulkValue('books', [
+      //   { name: 'Little Women' },
+      //   { name: 'Kafka on the Shore' },
+      //   { name: 'This is the End' },
+      //   { name: 'As the World Caves In' },
+      // ]);
 
       // Re-fetch all books after adding new ones
-      await fetchBooks(indexedDb);
+      await fetchMemories(indexedDb);
 
       // Fetch single book by ID
-      const book = await indexedDb.getValue('books', 1);
-      console.log('Single Book:', book);
+      const memory = await indexedDb.getValue('memories', 1);
+      console.log('Single memory:', memory);
 
       // Fetch all books after insertions
-      const allBooks = await indexedDb.getAllValue('books');
-      console.log('All Books after Insertions:', allBooks);
+      const allMemories = await indexedDb.getAllValue('memories');
+      console.log('All Memories after Insertions:', allMemories);
 
       // Delete a book by ID and re-fetch
-      await indexedDb.deleteValue('books', 1); // Deletes book with ID 1
-      await fetchBooks(indexedDb); // Re-fetch the updated list
+      await indexedDb.deleteValue('memories', 1); // Deletes book with ID 1
+      await fetchMemories(indexedDb); // Re-fetch the updated list
     };
 
-    const fetchBooks = async (indexedDb: IndexedDb) => {
-      const allBooks = await indexedDb.getAllValue('books');
-      setBooks(allBooks); // Update state with the fetched books
+    const fetchMemories = async (indexedDb: IndexedDb) => {
+      const allMemories = await indexedDb.getAllValue('memories');
+      setBooks(allMemories); // Update state with the fetched books
     };
 
     runIndexDb();
   }, []);
 
   const getMemory = async() =>{
-    const indexedDb = new IndexedDb('test');
+    const indexedDb = new IndexedDb('tulip');
     const mem = indexedDb.getValue('memories', 1);
     console.log(mem);
     return mem;

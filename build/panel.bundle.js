@@ -41345,7 +41345,7 @@ __webpack_require__.$Refresh$.register(_a, "Main");
 var Panel = function () {
     _c();
     var textareaRef = react__WEBPACK_IMPORTED_MODULE_0___default().useRef(null);
-    var db = new _db_indexedDb__WEBPACK_IMPORTED_MODULE_2__["default"]('test');
+    var db = new _db_indexedDb__WEBPACK_IMPORTED_MODULE_2__["default"]('tulip');
     db.createObjectStore(['memories']);
     var dateTime = new Date();
     console.log("current date is " + dateTime);
@@ -51894,7 +51894,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("bc4f4357b2b8b319f84c")
+/******/ 		__webpack_require__.h = () => ("0c55b2e5ef8e257200a2")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
