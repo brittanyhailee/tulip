@@ -23,10 +23,10 @@ const Panel: React.FC = () => {
   const db = new IndexedDb('test');
   db.createObjectStore(['memories']);
 
-
   const handleClick = () => {
     let memory = "";
     const text = textareaRef.current.value.trim();
+
 
     if (text.length !== 0) {
       console.log(textareaRef.current.value);

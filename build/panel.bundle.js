@@ -41533,6 +41533,8 @@ var Panel = function () {
     var textareaRef = react__WEBPACK_IMPORTED_MODULE_0___default().useRef(null);
     var db = new _db_indexedDb__WEBPACK_IMPORTED_MODULE_3__["default"]('test');
     db.createObjectStore(['memories']);
+    var dateTime = new Date();
+    console.log("current date is: " + dateTime);
     var handleClick = function () {
         var memory = "";
         var text = textareaRef.current.value.trim();
@@ -52300,7 +52302,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("4067b2c967fa9fd7ab7e")
+/******/ 		__webpack_require__.h = () => ("7411c043e5477bca8b19")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
