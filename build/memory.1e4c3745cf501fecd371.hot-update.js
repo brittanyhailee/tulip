@@ -1,11 +1,11 @@
 "use strict";
-self["webpackHotUpdatetulip"]("devtools",{},
+self["webpackHotUpdatetulip"]("memory",{},
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("7411c043e5477bca8b19")
+/******/ 	__webpack_require__.h = () => ("bc4f4357b2b8b319f84c")
 /******/ })();
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=devtools.7db66a92ae613e81a65a.hot-update.js.map
+//# sourceMappingURL=memory.1e4c3745cf501fecd371.hot-update.js.map

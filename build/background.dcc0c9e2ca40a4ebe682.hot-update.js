@@ -3,9 +3,9 @@ self["webpackHotUpdatetulip"]("background",{},
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("7411c043e5477bca8b19")
+/******/ 	__webpack_require__.h = () => ("821fe7b3be9ed38953a7")
 /******/ })();
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=background.7db66a92ae613e81a65a.hot-update.js.map
+//# sourceMappingURL=background.dcc0c9e2ca40a4ebe682.hot-update.js.map

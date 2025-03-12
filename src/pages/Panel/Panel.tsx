@@ -5,23 +5,27 @@ import Test from './DB';
 import IndexedDb from '../../db/indexedDb';
 
 
-const Main = () => {
+const  Main = ({handleClick, textareaRef}: {handleClick: () => void, textareaRef: React.RefObject<HTMLTextAreaElement>}) => {
   return (
-    <div>
-      <h1>Welcome to the Main Page</h1>
-      {/* Use the Test component here */}
-      <Test />
+    <div className="container">
+      <h1>Your memory</h1>
+      <form action="#" id="input">
+        <label>What would you like to remember?</label>
+        <textarea ref={textareaRef} id="memory"></textarea>
+        <button onClick={handleClick} type="submit" value="send">send</button>
+      </form>
+
     </div>
   );
 };
-
-// await indexedDb.putValue('memories', { name: 'Don\'t judge each day by the harvest you reap but by the seeds that you plant.'});
 
 
 const Panel: React.FC = () => {
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
   const db = new IndexedDb('test');
   db.createObjectStore(['memories']);
+  let dateTime = new Date();
+  console.log("current date is " + dateTime);
 
   const handleClick = () => {
     let memory = "";
@@ -38,16 +42,16 @@ const Panel: React.FC = () => {
   }
 
   return (
+    <Main handleClick={handleClick} textareaRef={textareaRef} />
+    // <div className="container">
+    //   <h1>Your memory</h1>
+    //   <form action="#" id="input">
+    //     <label>What would you like to remember?</label>
+    //     <textarea ref={textareaRef} id="memory"></textarea>
+    //     <button onClick={handleClick} type="submit" value="send">send</button>
+    //   </form>
 
-    <div className="container">
-      <h1>Your memory</h1>
-      <form action="#" id="input">
-        <label>What would you like to remember?</label>
-        <textarea ref={textareaRef} id="memory"></textarea>
-        <button onClick={handleClick} type="submit" value="send">send</button>
-      </form>
-
-    </div>
+    // </div>
     
   );
   
