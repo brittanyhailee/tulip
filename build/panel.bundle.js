@@ -41349,6 +41349,7 @@ var Panel = function () {
     var textareaRef = react__WEBPACK_IMPORTED_MODULE_0___default().useRef(null);
     var db = new _db_indexedDb__WEBPACK_IMPORTED_MODULE_2__["default"]('tulip');
     db.createObjectStore(['memories']);
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""), memory = _d[0], setMemory = _d[1];
     var dateTime = new Date();
     console.log("current date is " + dateTime);
     var handleClick = function () {
@@ -41357,7 +41358,9 @@ var Panel = function () {
         if (text.length !== 0) {
             console.log(textareaRef.current.value);
             memory = textareaRef.current.value;
+            setMemory(text);
             db.putValue('memories', { name: memory });
+            textareaRef.current.value = "";
         }
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Main, { handleClick: handleClick, textareaRef: textareaRef })
@@ -41373,7 +41376,7 @@ var Panel = function () {
 };
 _b = Panel;
 __webpack_require__.$Refresh$.register(_b, "Panel");
-_c(Panel, "gJtT2aPnbUb4WH8ANBrFCKASbhs=");
+_c(Panel, "sc8NTamx8vUsy+ge7vNVMU+8cLw=");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Panel);
 
 
@@ -51896,7 +51899,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("8500d7fb333e78965041")
+/******/ 		__webpack_require__.h = () => ("7ea4eaa0e4236f3a56ad")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

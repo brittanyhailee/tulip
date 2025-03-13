@@ -24,8 +24,13 @@ const Panel: React.FC = () => {
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
   const db = new IndexedDb('tulip');
   db.createObjectStore(['memories']);
+
+  const [memory, setMemory] = useState<string>("");
+
+
   let dateTime = new Date();
   console.log("current date is " + dateTime);
+
 
   const handleClick = () => {
     let memory = "";
@@ -35,7 +40,9 @@ const Panel: React.FC = () => {
     if (text.length !== 0) {
       console.log(textareaRef.current.value);
       memory = textareaRef.current.value;
+      setMemory(text);
       db.putValue('memories', {name: memory});
+      textareaRef.current.value = "";
     }
     
 
