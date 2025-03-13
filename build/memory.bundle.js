@@ -41066,7 +41066,11 @@ function getSize() {
 }
 function getRandomKey() {
     var min = 1;
-    // const max = maxKey;
+    console.log("keys array is " + keysArray);
+    console.log("your key is " + keysArray[0]);
+    if (keysArray.length === 1) {
+        return keysArray[0];
+    }
     // Testing
     var max = keysArray.length - 1;
     // const key = keysArray[randomKeyTest];
@@ -51405,7 +51409,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("bf194d226dfa0c0f52fc")
+/******/ 		__webpack_require__.h = () => ("9b78e8bad48365647d35")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

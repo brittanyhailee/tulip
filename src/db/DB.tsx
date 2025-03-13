@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 
 export const Test = () => {
   const [memory, setMemories] = useState<any[]>([]);
+  const [book, setBooks] = useState<any[]>([]);
 
   useEffect(() => {
     const runIndexDb = async () => {
@@ -11,7 +12,7 @@ export const Test = () => {
 
       // Add data to IndexedDB
       await indexedDb.putValue('memories', { name: 'Don\'t judge each day by the harvest you reap but by the seeds that you plant.'});
-      await indexedDb.putValue('books', { name: 'Wicked' });
+      await indexedDb.putValue('books', { name: 'Wicked'});
       // await indexedDb.putBulkValue('books', [
       //   { name: 'Little Women' },
       //   { name: 'Kafka on the Shore' },
@@ -21,6 +22,7 @@ export const Test = () => {
 
       // Re-fetch all books after adding new ones
       await fetchMemories(indexedDb);
+      // await fetchBooks(indexedDb);
 
       // Fetch single book by ID
       const memory = await indexedDb.getValue('memories', 1);
@@ -38,6 +40,11 @@ export const Test = () => {
     const fetchMemories = async (indexedDb: IndexedDb) => {
       const allMemories = await indexedDb.getAllValue('memories');
       setMemories(allMemories); // Update state with the fetched books
+    };
+
+    const fetchBooks = async (indexedDb: IndexedDb) => {
+      const allBooks = await indexedDb.getAllValue('books');
+      setBooks(allBooks); // Update state with the fetched books
     };
 
     runIndexDb();

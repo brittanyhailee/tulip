@@ -84,7 +84,13 @@ async function getSize() {
 function getRandomKey() {
 
     const min = 1;
-    // const max = maxKey;
+    console.log("keys array is " + keysArray)
+    console.log("your key is " + keysArray[0])
+    if (keysArray.length === 1) {
+        
+        return keysArray[0]
+
+    }
 
     // Testing
     const max = keysArray.length-1;
