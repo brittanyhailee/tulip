@@ -2,16 +2,16 @@ import IndexedDb from './indexedDb';
 import React, {useEffect, useState} from 'react';
 
 export const Test = () => {
-  const [books, setBooks] = useState<any[]>([]);
+  const [memory, setMemories] = useState<any[]>([]);
 
   useEffect(() => {
     const runIndexDb = async () => {
       const indexedDb = new IndexedDb('tulip');
-      await indexedDb.createObjectStore(['memories']);
+      await indexedDb.createObjectStore(['memories', 'books']);
 
       // Add data to IndexedDB
-      // await indexedDb.putValue('memories', { name: 'Don\'t judge each day by the harvest you reap but by the seeds that you plant.'});
-      // await indexedDb.putValue('books', { name: 'Wicked' });
+      await indexedDb.putValue('memories', { name: 'Don\'t judge each day by the harvest you reap but by the seeds that you plant.'});
+      await indexedDb.putValue('books', { name: 'Wicked' });
       // await indexedDb.putBulkValue('books', [
       //   { name: 'Little Women' },
       //   { name: 'Kafka on the Shore' },
@@ -37,18 +37,18 @@ export const Test = () => {
 
     const fetchMemories = async (indexedDb: IndexedDb) => {
       const allMemories = await indexedDb.getAllValue('memories');
-      setBooks(allMemories); // Update state with the fetched books
+      setMemories(allMemories); // Update state with the fetched books
     };
 
     runIndexDb();
   }, []);
 
-  const getMemory = async() =>{
-    const indexedDb = new IndexedDb('tulip');
-    const mem = indexedDb.getValue('memories', 1);
-    console.log(mem);
-    return mem;
-    };
+  // const getMemory = async() =>{
+  //   const indexedDb = new IndexedDb('tulip');
+  //   const mem = indexedDb.getValue('memories', 1);
+  //   console.log(mem);
+  //   return mem;
+  //   };
 
   
   return (<React.Fragment></React.Fragment>)

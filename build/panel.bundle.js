@@ -41330,6 +41330,8 @@ var _c;
 _c = __webpack_require__.$Refresh$.signature();
 
 
+// import IndexedDb from './indexedDb';
+// import Test from './DB'; 
 
 var Main = function (_d) {
     var handleClick = _d.handleClick, textareaRef = _d.textareaRef;
@@ -51894,7 +51896,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("0c55b2e5ef8e257200a2")
+/******/ 		__webpack_require__.h = () => ("bf194d226dfa0c0f52fc")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

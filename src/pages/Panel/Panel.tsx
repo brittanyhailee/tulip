@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './Panel.css';
 // import IndexedDb from './indexedDb';
-import Test from './DB'; 
+// import Test from './DB'; 
 import IndexedDb from '../../db/indexedDb';
 
 
