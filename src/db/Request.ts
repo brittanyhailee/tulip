@@ -87,9 +87,7 @@ function getRandomKey() {
     console.log("keys array is " + keysArray)
     console.log("your key is " + keysArray[0])
     if (keysArray.length === 1) {
-        
         return keysArray[0]
-
     }
 
     // Testing
@@ -97,7 +95,7 @@ function getRandomKey() {
     // const key = keysArray[randomKeyTest];
     // End of Testing
 
-    const setRandomKey =  Math.floor(Math.random() * (max - min + 1)) + min;
+    const setRandomKey =  Math.floor(Math.random() * (max - min + 1));
     return keysArray[setRandomKey];
     
     

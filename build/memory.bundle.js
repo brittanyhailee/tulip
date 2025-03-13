@@ -41075,7 +41075,7 @@ function getRandomKey() {
     var max = keysArray.length - 1;
     // const key = keysArray[randomKeyTest];
     // End of Testing
-    var setRandomKey = Math.floor(Math.random() * (max - min + 1)) + min;
+    var setRandomKey = Math.floor(Math.random() * (max - min + 1));
     return keysArray[setRandomKey];
 }
 function getValueFromMemory() {
@@ -51409,7 +51409,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("9b78e8bad48365647d35")
+/******/ 		__webpack_require__.h = () => ("8500d7fb333e78965041")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
