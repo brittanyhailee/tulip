@@ -4,13 +4,19 @@ import IndexedDb from '../../db/indexedDb';
 import {getSize, getValueFromMemory} from '../../db/Request';
 
 
-
-const Main = () => {
+const Main = ({ memory, handleClick }: { memory: string; handleClick: () => void }) =>{
   return (
-    <div>
-      <h1>Welcome to the Main Page</h1>
-      {/* Use the Test component here */}
+    <div className="container">
 
+      <h1>Your memory</h1>
+      <p>memory goes here</p>
+   
+      <button id="memory-btn" onClick={handleClick}>Click me please...</button>
+      <div>
+        <h4>memory: </h4>
+        <p>{memory}</p>
+      </div>
+      
     </div>
   );
 };
@@ -40,25 +46,11 @@ const Memory: React.FC = () => {
     });
     // getSize()
   
-  }
+  };
 
-
-  return (
-
-    <div className="container">
-
-      <h1>Your memory</h1>
-      <p>memory goes here</p>
-   
-      <button id="memory-btn" onClick={handleClick}>Click me please...</button>
-      <div>
-        <h4>memory: </h4>
-        <p>{memory}</p>
-      </div>
-      
-    </div>
+  return <Main memory={memory} handleClick={handleClick} />; 
     
-  );
+  
   
 
 };

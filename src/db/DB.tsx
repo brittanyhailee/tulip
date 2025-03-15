@@ -13,16 +13,10 @@ export const Test = () => {
       // Add data to IndexedDB
       await indexedDb.putValue('memories', { name: 'Don\'t judge each day by the harvest you reap but by the seeds that you plant.'});
       await indexedDb.putValue('books', { name: 'Wicked'});
-      // await indexedDb.putBulkValue('books', [
-      //   { name: 'Little Women' },
-      //   { name: 'Kafka on the Shore' },
-      //   { name: 'This is the End' },
-      //   { name: 'As the World Caves In' },
-      // ]);
+ 
 
       // Re-fetch all books after adding new ones
       await fetchMemories(indexedDb);
-      // await fetchBooks(indexedDb);
 
       // Fetch single book by ID
       const memory = await indexedDb.getValue('memories', 1);

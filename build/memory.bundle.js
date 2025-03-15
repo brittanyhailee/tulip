@@ -41066,16 +41066,14 @@ function getSize() {
 }
 function getRandomKey() {
     var min = 1;
-    console.log("keys array is " + keysArray);
-    console.log("your key is " + keysArray[0]);
     if (keysArray.length === 1) {
         return keysArray[0];
     }
     // Testing
-    var max = keysArray.length - 1;
+    var max = keysArray.length;
     // const key = keysArray[randomKeyTest];
     // End of Testing
-    var setRandomKey = Math.floor(Math.random() * (max - min + 1));
+    var setRandomKey = Math.floor(Math.random() * max);
     return keysArray[setRandomKey];
 }
 function getValueFromMemory() {
@@ -41173,9 +41171,15 @@ _c = __webpack_require__.$Refresh$.signature();
 
 
 
-var Main = function () {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Welcome to the Main Page")));
+var Main = function (_d) {
+    var memory = _d.memory, handleClick = _d.handleClick;
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "memory goes here"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { id: "memory-btn", onClick: handleClick }, "Click me please..."),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "memory: "),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, memory))));
 };
 _a = Main;
 __webpack_require__.$Refresh$.register(_a, "Main");
@@ -41199,13 +41203,7 @@ var Memory = function () {
             console.log("Error fetching memory: ", error);
         });
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "memory goes here"),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { id: "memory-btn", onClick: handleClick }, "Click me please..."),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "memory: "),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, memory))));
+    return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Main, { memory: memory, handleClick: handleClick });
 };
 _b = Memory;
 __webpack_require__.$Refresh$.register(_b, "Memory");
@@ -51409,7 +51407,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("7ea4eaa0e4236f3a56ad")
+/******/ 		__webpack_require__.h = () => ("27b4e48727e024d821f1")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
