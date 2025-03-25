@@ -15,3 +15,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#title {
+  margin: 0;
+  padding: 0;
+  color:white;
+  height: 50px;
+}
+#memory {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+
+}
+
+#tulip-gif {
+  height: 240px;
+  width: 240px;
+  margin-right: 25px;
+  filter: drop-shadow(0 0 0.75rem rgb(148, 99, 99));
+}
+
+#tulip-gif:hover{
+
+  filter: drop-shadow(0 0 0.75rem rgb(168, 116, 116));
+}
+
+#tag-gif {
+  height: 220px;
+  width: 220px;
+  filter: drop-shadow(0 0 0.75rem rgb(148, 99, 99));
+  padding-bottom: 20px;
+}
+
+#tag-gif:hover{
+  filter: drop-shadow(0 0 0.75rem rgb(168, 116, 116));
+}

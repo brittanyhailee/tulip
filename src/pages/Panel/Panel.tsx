@@ -41,7 +41,7 @@ const Panel: React.FC = () => {
       console.log(textareaRef.current.value);
       memory = textareaRef.current.value;
       setMemory(text);
-      db.putValue('memories', {name: memory});
+      db.putValue('memories', {name: memory, date: dateTime});
       textareaRef.current.value = "";
     }
     

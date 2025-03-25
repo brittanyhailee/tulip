@@ -5154,12 +5154,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/img/green_bg2.png */ "./src/assets/img/green_bg2.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 400px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n  background-color: cadetblue;\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n}\n\n#input {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n#memory {\n  height: 100px;\n  border-radius: 10px;\n  width: 300px;\n}\n\nbutton {\n  margin: 15px;\n  width: 70px;\n  height: 30px;\n}", "",{"version":3,"sources":["webpack://./src/pages/Panel/Panel.css"],"names":[],"mappings":"AAAA;EACE,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,+DAAA;EACA,2BAAA;EACA,4BAAA;EACA,4BAAA;EACA,sBAAA;EACA,4BAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AACF;;AAGA;EACE,aAAA;EACA,mBAAA;EACA,YAAA;AAAF;;AAGA;EACE,YAAA;EACA,WAAA;EACA,YAAA;AAAF","sourcesContent":["html {\n  width: 400px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n  background-color: cadetblue;\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n}\n\n#input {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n\n}\n\n#memory {\n  height: 100px;\n  border-radius: 10px;\n  width: 300px;\n}\n\nbutton {\n  margin: 15px;\n  width: 70px;\n  height: 30px;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 400px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-color: cadetblue;\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n}\n\n#input {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n#memory {\n  height: 100px;\n  border-radius: 10px;\n  width: 300px;\n}\n\nbutton {\n  margin: 15px;\n  width: 70px;\n  height: 30px;\n}", "",{"version":3,"sources":["webpack://./src/pages/Panel/Panel.css"],"names":[],"mappings":"AAAA;EACE,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,yDAAA;EACA,2BAAA;EACA,4BAAA;EACA,4BAAA;EACA,sBAAA;EACA,4BAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AACF;;AAGA;EACE,aAAA;EACA,mBAAA;EACA,YAAA;AAAF;;AAGA;EACE,YAAA;EACA,WAAA;EACA,YAAA;AAAF","sourcesContent":["html {\n  width: 400px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  background-image: url(\"../../assets/img/green_bg2.png\");\n  background-color: cadetblue;\n  /* background-color: pink; */\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n}\n\n#input {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n\n}\n\n#memory {\n  height: 100px;\n  border-radius: 10px;\n  width: 300px;\n}\n\nbutton {\n  margin: 15px;\n  width: 70px;\n  height: 30px;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5284,6 +5289,42 @@ module.exports = function (cssWithMappingToString) {
     }
   };
   return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
 };
 
 /***/ }),
@@ -41359,7 +41400,7 @@ var Panel = function () {
             console.log(textareaRef.current.value);
             memory = textareaRef.current.value;
             setMemory(text);
-            db.putValue('memories', { name: memory });
+            db.putValue('memories', { name: memory, date: dateTime });
             textareaRef.current.value = "";
         }
     };
@@ -49755,6 +49796,17 @@ module.exports.formatError = function (err) {
 
 /***/ }),
 
+/***/ "./src/assets/img/green_bg2.png":
+/*!**************************************!*\
+  !*** ./src/assets/img/green_bg2.png ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "cd92f13df2e21356c1b3.png";
+
+/***/ }),
+
 /***/ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/client/ErrorOverlayEntry.js":
 /*!***************************************************************************************!*\
   !*** ./node_modules/@pmmmwh/react-refresh-webpack-plugin/client/ErrorOverlayEntry.js ***!
@@ -51899,7 +51951,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("27b4e48727e024d821f1")
+/******/ 		__webpack_require__.h = () => ("de8aefbee351d9404ff0")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -52446,7 +52498,7 @@ replaceTraps((oldTraps) => ({
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
-/******/ 		// no baseURI
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
