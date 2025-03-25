@@ -1,5 +1,5 @@
 const storeName = 'memories';
-const dbName = 'test';
+const dbName = 'tulip';
 
 let db : IDBDatabase;
 const request = indexedDB.open(dbName, 1);
@@ -57,47 +57,86 @@ export const dbSize = async (db, dbName) => {
 };
 
 var maxKey = 0;
-export function getSize() {
+let keysArray: string | any[] = []
+var randomKeyTest = 0;
+
+async function getSize() {
     const transaction = db.transaction(storeName, "readonly");
     var objectStore = transaction.objectStore(storeName);
+
+    // Testing
+    const getAllKeysRequest = objectStore.getAllKeys();
+    getAllKeysRequest.onsuccess = () => {
+        keysArray = getAllKeysRequest.result;
+        console.log("keysArray: " + keysArray);
+    }
+    // End of test
+
     const countRequest = objectStore.count();
     countRequest.onsuccess = () => {
         maxKey = countRequest.result;
         console.log(countRequest.result);
+
         return countRequest.result;
     }
 }
 
 function getRandomKey() {
+
     const min = 1;
-    const max = maxKey;
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    
+    if (keysArray.length === 1) {
+        return keysArray[0]
+    }
+
+    // Testing
+    const max = keysArray.length;
+    // const key = keysArray[randomKeyTest];
+    // End of Testing
+
+    const setRandomKey =  Math.floor(Math.random() * max);
+    return keysArray[setRandomKey];
+    
+    
 }
 
 
 export function getValueFromMemory(): Promise<string> {
     return new Promise((resolve, reject) => {
-        const transaction = db.transaction(storeName, "readonly");
-        const store = transaction.objectStore(storeName);
-        // const key = 1;
-        const key = getRandomKey();
-        const getRequest = store.get(key);
+        getSize();
+        var key = getRandomKey();
+        if (key != undefined) {
+            
+            const transaction = db.transaction(storeName, "readonly");
+            const store = transaction.objectStore(storeName);
+            // const key = 1;
+
+             // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
+            // if (key == undefined) {
+            //     key = 1;
+            // }
+        
+            console.log("the key we are getting is " + key);
+            const getRequest = store.get(key);
 
 
-        getRequest.onsuccess = (event) => {
-            const value = (event.target as IDBRequest).result;
-            if (value) {
-                console.log("Value retrieved: ", value);
-                console.log("Memory: ", value.name);
-                resolve(JSON.stringify(value.name));
-            } else {
-                console.log("No value found for key: ", key);
-                resolve("No value found for key: " + key);
-            }
-        };
-        getRequest.onerror = (event) => {
-            console.error("Error getting value: ", event);
-        };
+            getRequest.onsuccess = (event) => {
+                const value = (event.target as IDBRequest).result;
+                if (value) {
+                    console.log("Value retrieved: ", value);
+                    console.log("Memory: ", value.name);
+                    resolve(JSON.stringify(value.name));
+                } else {
+                    console.log("No value found for key: ", key);
+                    resolve("No value found for key: " + key);
+                }
+            };
+            getRequest.onerror = (event) => {
+                console.error("Error getting value: ", event);
+            };
+        } else {
+            console.log('key is currently undefined');
+        }
 
 
     });

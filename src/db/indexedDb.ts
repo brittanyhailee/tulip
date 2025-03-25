@@ -23,6 +23,7 @@ class IndexedDb {
         } catch (error) {
             return false;
         }
+        
     }
 
     public async getValue(tableName: string, id: number) {

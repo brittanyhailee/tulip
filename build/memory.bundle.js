@@ -40948,8 +40948,6 @@ module.exports = styleTagTransform;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "dbSize": () => (/* binding */ dbSize),
-/* harmony export */   "getMaxId": () => (/* binding */ getMaxId),
-/* harmony export */   "getSize": () => (/* binding */ getSize),
 /* harmony export */   "getValueFromMemory": () => (/* binding */ getValueFromMemory)
 /* harmony export */ });
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
@@ -40993,7 +40991,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     }
 };
 var storeName = 'memories';
-var dbName = 'test';
+var dbName = 'tulip';
 var db;
 var request = indexedDB.open(dbName, 1);
 request.onerror = function (event) {
@@ -41043,66 +41041,75 @@ var dbSize = function (db, dbName) { return __awaiter(void 0, void 0, void 0, fu
     });
 }); };
 var maxKey = 0;
+var keysArray = [];
+var randomKeyTest = 0;
 function getSize() {
-    var transaction = db.transaction(storeName, "readonly");
-    var objectStore = transaction.objectStore(storeName);
-    var countRequest = objectStore.count();
-    countRequest.onsuccess = function () {
-        maxKey = countRequest.result;
-        console.log(countRequest.result);
-        return countRequest.result;
-    };
+    return __awaiter(this, void 0, void 0, function () {
+        var transaction, objectStore, getAllKeysRequest, countRequest;
+        return __generator(this, function (_a) {
+            transaction = db.transaction(storeName, "readonly");
+            objectStore = transaction.objectStore(storeName);
+            getAllKeysRequest = objectStore.getAllKeys();
+            getAllKeysRequest.onsuccess = function () {
+                keysArray = getAllKeysRequest.result;
+                console.log("keysArray: " + keysArray);
+            };
+            countRequest = objectStore.count();
+            countRequest.onsuccess = function () {
+                maxKey = countRequest.result;
+                console.log(countRequest.result);
+                return countRequest.result;
+            };
+            return [2 /*return*/];
+        });
+    });
 }
 function getRandomKey() {
     var min = 1;
-    var max = maxKey;
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    if (keysArray.length === 1) {
+        return keysArray[0];
+    }
+    // Testing
+    var max = keysArray.length;
+    // const key = keysArray[randomKeyTest];
+    // End of Testing
+    var setRandomKey = Math.floor(Math.random() * max);
+    return keysArray[setRandomKey];
 }
 function getValueFromMemory() {
     return new Promise(function (resolve, reject) {
-        var transaction = db.transaction(storeName, "readonly");
-        var store = transaction.objectStore(storeName);
-        // const key = 1;
+        getSize();
         var key = getRandomKey();
-        var getRequest = store.get(key);
-        getRequest.onsuccess = function (event) {
-            var value = event.target.result;
-            if (value) {
-                console.log("Value retrieved: ", value);
-                console.log("Memory: ", value.name);
-                resolve(JSON.stringify(value.name));
-            }
-            else {
-                console.log("No value found for key: ", key);
-                resolve("No value found for key: " + key);
-            }
-        };
-        getRequest.onerror = function (event) {
-            console.error("Error getting value: ", event);
-        };
+        if (key != undefined) {
+            var transaction = db.transaction(storeName, "readonly");
+            var store = transaction.objectStore(storeName);
+            // const key = 1;
+            // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
+            // if (key == undefined) {
+            //     key = 1;
+            // }
+            console.log("the key we are getting is " + key);
+            var getRequest = store.get(key);
+            getRequest.onsuccess = function (event) {
+                var value = event.target.result;
+                if (value) {
+                    console.log("Value retrieved: ", value);
+                    console.log("Memory: ", value.name);
+                    resolve(JSON.stringify(value.name));
+                }
+                else {
+                    console.log("No value found for key: ", key);
+                    resolve("No value found for key: " + key);
+                }
+            };
+            getRequest.onerror = function (event) {
+                console.error("Error getting value: ", event);
+            };
+        }
+        else {
+            console.log('key is currently undefined');
+        }
     });
-}
-function getMaxId(callback) {
-    request.onsuccess = function () {
-        var db = request.result;
-        var transaction = db.transaction(storeName, 'readonly');
-        var objectStore = transaction.objectStore(storeName);
-        var index = objectStore.index('id');
-        var openCursorRequest = index.openCursor(null, 'prev');
-        var maxIdObject = null;
-        openCursorRequest.onsuccess = function (event) {
-            if (event.target.result) {
-                maxIdObject = event.target.result.value;
-            }
-            console.log("max id is " + maxIdObject);
-        };
-        transaction.oncomplete = function (event) {
-            console.log("max id is " + maxIdObject);
-            if (callback) {
-                callback(maxIdObject);
-            }
-        };
-    };
 }
 
 
@@ -41164,9 +41171,15 @@ _c = __webpack_require__.$Refresh$.signature();
 
 
 
-var Main = function () {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Welcome to the Main Page")));
+var Main = function (_d) {
+    var memory = _d.memory, handleClick = _d.handleClick;
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "memory goes here"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { id: "memory-btn", onClick: handleClick }, "Click me please..."),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "memory: "),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, memory))));
 };
 _a = Main;
 __webpack_require__.$Refresh$.register(_a, "Main");
@@ -41175,11 +41188,6 @@ var Memory = function () {
     // const [value, setValue] = useState<string>('');
     // const [isClicked, setIsClicked] = useState<boolean>(false);
     var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''), memory = _d[0], setMemory = _d[1];
-    // const handleClick = () => {
-    //   const valueFromMemory = getValueFromMemory();
-    //   setValue(valueFromMemory);
-    //   setIsClicked(true);
-    // }
     function fetchMemory() {
         return new Promise(function (resolve) {
             setTimeout(function () {
@@ -41194,15 +41202,8 @@ var Memory = function () {
         }).catch(function (error) {
             console.log("Error fetching memory: ", error);
         });
-        (0,_db_Request__WEBPACK_IMPORTED_MODULE_2__.getSize)();
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "memory goes here"),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { id: "memory-btn", onClick: handleClick }, "Click me please..."),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "memory: "),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, memory))));
+    return react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Main, { memory: memory, handleClick: handleClick });
 };
 _b = Memory;
 __webpack_require__.$Refresh$.register(_b, "Memory");
@@ -51406,7 +51407,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("937a4a05d77a4fbd21c2")
+/******/ 		__webpack_require__.h = () => ("de8aefbee351d9404ff0")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
