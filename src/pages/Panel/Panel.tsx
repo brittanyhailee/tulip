@@ -36,10 +36,10 @@ const Panel: React.FC = () => {
     let memory = "";
     const text = textareaRef.current.value.trim();
 
-
     if (text.length !== 0) {
       console.log(textareaRef.current.value);
       memory = textareaRef.current.value;
+
       setMemory(text);
       db.putValue('memories', {name: memory, date: dateTime});
       textareaRef.current.value = "";

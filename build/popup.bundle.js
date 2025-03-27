@@ -40386,7 +40386,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _assets_img_icon_128_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/img/icon-128.png */ "./src/assets/img/icon-128.png");
+/* harmony import */ var _assets_img_tulip_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/img/tulip_logo.png */ "./src/assets/img/tulip_logo.png");
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 /* provided dependency */ var __react_refresh_error_overlay__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/overlay/index.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
@@ -40426,7 +40426,7 @@ var GreetingComponent = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Hello, ", this.state.name, "!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-        src: _assets_img_icon_128_png__WEBPACK_IMPORTED_MODULE_1__,
+        src: _assets_img_tulip_logo_png__WEBPACK_IMPORTED_MODULE_1__,
         alt: "extension icon"
       }));
     }
@@ -49679,17 +49679,6 @@ module.exports = __webpack_require__.p + "ef3536fe87445fedca80.png";
 
 /***/ }),
 
-/***/ "./src/assets/img/icon-128.png":
-/*!*************************************!*\
-  !*** ./src/assets/img/icon-128.png ***!
-  \*************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-module.exports = __webpack_require__.p + "71c201c734eb9e043686.png";
-
-/***/ }),
-
 /***/ "./src/assets/img/logo.svg":
 /*!*********************************!*\
   !*** ./src/assets/img/logo.svg ***!
@@ -49709,6 +49698,17 @@ module.exports = __webpack_require__.p + "103b5fa18196d5665a7e.svg";
 
 "use strict";
 module.exports = __webpack_require__.p + "ac9ac49363aca7eabec6.gif";
+
+/***/ }),
+
+/***/ "./src/assets/img/tulip_logo.png":
+/*!***************************************!*\
+  !*** ./src/assets/img/tulip_logo.png ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "58c7229813b7e49cf60f.png";
 
 /***/ }),
 
@@ -51533,7 +51533,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("de8aefbee351d9404ff0")
+/******/ 		__webpack_require__.h = () => ("8c0b058b655010db8b18")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

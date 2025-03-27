@@ -14,7 +14,8 @@ const Main = ({ memory, handleClick }: { memory: string; handleClick: () => void
       <button id="memory-btn" onClick={handleClick}>Click me please...</button>
       <div>
         <h4>memory: </h4>
-        <p>{memory}</p>
+        <div id="memory-div"></div>
+        {/* <p >{memory}</p> */}
       </div>
       
     </div>
@@ -39,7 +40,12 @@ const Memory: React.FC = () => {
 
   const handleClick = () => {
     getValueFromMemory().then((memory) => {
-      console.log("the memory is: ", memory);
+      // memory = memory.replace(/\\n/g, "\n"); replace new line with spaces 
+      memory = memory.replace(/\\n/g, "\n"); 
+      memory = memory.replace(/\n/g, '<br>');
+      
+      document.getElementById('memory-div').innerHTML = memory;
+    
       setMemory(memory);
     }).catch((error) => {
       console.log("Error fetching memory: ", error);
