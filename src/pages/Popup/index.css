@@ -45,7 +45,7 @@ code {
 #tag-gif {
   height: 220px;
   width: 220px;
-  filter: drop-shadow(0 0 0.75rem rgb(148, 99, 99));
+  filter: drop-shadow(0 0 0.75rem #946363);
   padding-bottom: 20px;
 }
 
