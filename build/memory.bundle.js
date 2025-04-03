@@ -5159,7 +5159,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 400px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n  background-color: #F4f2f0;\n  /* background-color: pink; */\n}", "",{"version":3,"sources":["webpack://./src/pages/Memory/Memory.css"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,+DAAA;EACA,yBAAA;EACA,4BAAA;AACJ","sourcesContent":["html {\n    width: 400px;\n    height: 260px;\n    margin: 0;\n    padding: 0;\n    /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n    background-color: #F4f2f0;\n    /* background-color: pink; */\n  }\n  \n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 400px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n  background-color: #F4f2f0;\n  /* background-color: pink; */\n}", "",{"version":3,"sources":["webpack://./src/pages/Memory/Memory.css"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,+DAAA;EACA,yBAAA;EACA,4BAAA;AACJ","sourcesContent":["html {\n    width: 400px;\n    height: 260px;\n    margin: 0;\n    padding: 0;\n    /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n    background-color: #F4f2f0;\n    /* background-color: pink; */\n  }\n\n  \n  \n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41179,7 +41179,7 @@ var Main = function (_d) {
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { id: "memory-btn", onClick: handleClick }, "Click me please..."),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "memory: "),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, memory))));
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "memory-div" }))));
 };
 _a = Main;
 __webpack_require__.$Refresh$.register(_a, "Main");
@@ -41197,7 +41197,10 @@ var Memory = function () {
     }
     var handleClick = function () {
         (0,_db_Request__WEBPACK_IMPORTED_MODULE_2__.getValueFromMemory)().then(function (memory) {
-            console.log("the memory is: ", memory);
+            // memory = memory.replace(/\\n/g, "\n"); replace new line with spaces 
+            memory = memory.replace(/\\n/g, "\n");
+            memory = memory.replace(/\n/g, '<br>');
+            document.getElementById('memory-div').innerHTML = memory;
             setMemory(memory);
         }).catch(function (error) {
             console.log("Error fetching memory: ", error);
@@ -51407,7 +51410,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("de8aefbee351d9404ff0")
+/******/ 		__webpack_require__.h = () => ("3f9c6e92d911537ecc45")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

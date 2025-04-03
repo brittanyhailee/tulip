@@ -185,12 +185,16 @@ var options = {
         },
       ],
     }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'pages', 'Newtab', 'index.html'),
-      filename: 'newtab.html',
-      chunks: ['newtab'],
-      cache: false,
-    }), 
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets/img/tulip_logo.png',
+          to: path.join(__dirname, 'build'),
+          force: true,
+        },
+      ],
+    }),
+    
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'pages', 'Memory', 'index.html'),
       filename: 'memory.html',

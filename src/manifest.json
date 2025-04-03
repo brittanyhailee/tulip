@@ -6,13 +6,11 @@
   "background": { "service_worker": "background.bundle.js" },
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icon-34.png"
+    "default_icon": "tulip_logo.png"
   },
-  "chrome_url_overrides": {
-    "newtab": "newtab.html"
-  },
+  
   "icons": {
-    "128": "icon-128.png"
+    "128": "tulip_logo.png"
   },
   "content_scripts": [
     {
@@ -24,7 +22,7 @@
   "devtools_page": "devtools.html",
   "web_accessible_resources": [
     {
-      "resources": ["content.styles.css", "icon-128.png", "icon-34.png"],
+      "resources": ["content.styles.css", "tulip_logo.png"],
       "matches": []
     }
   ]
