@@ -14,7 +14,6 @@ const Popup = () => {
         <div id="app-container">
           <h1 id="title">tulip</h1>
           <div id="memory"> 
-
             <a href="panel.html"><img id="tulip-gif" src={tulip}></img></a>
             <a href="memory.html"><img id="tag-gif" src={tag}></img></a>
 
