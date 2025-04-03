@@ -5154,12 +5154,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/img/memory_bg.png */ "./src/assets/img/memory_bg.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 400px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n  background-color: #F4f2f0;\n  /* background-color: pink; */\n}", "",{"version":3,"sources":["webpack://./src/pages/Memory/Memory.css"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,+DAAA;EACA,yBAAA;EACA,4BAAA;AACJ","sourcesContent":["html {\n    width: 400px;\n    height: 260px;\n    margin: 0;\n    padding: 0;\n    /* background-image: url(\"../../assets/img/tulip_pixel.png\"); */\n    background-color: #F4f2f0;\n    /* background-color: pink; */\n  }\n\n  \n  \n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 450px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  /* background-color: #F4f2f0; */\n  /* background-color: pink; */\n}", "",{"version":3,"sources":["webpack://./src/pages/Memory/Memory.css"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,yDAAA;EACA,sBAAA;EACA,4BAAA;EACA,+BAAA;EACA,4BAAA;AACJ","sourcesContent":["html {\n    width: 450px;\n    height: 260px;\n    margin: 0;\n    padding: 0;\n    background-image: url(\"../../assets/img/memory_bg.png\");\n    background-size: cover;\n    background-repeat: no-repeat;\n    /* background-color: #F4f2f0; */\n    /* background-color: pink; */\n  }\n\n  \n  \n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5257,6 +5262,42 @@ module.exports = function (cssWithMappingToString) {
     }
   };
   return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
 };
 
 /***/ }),
@@ -49589,6 +49630,17 @@ module.exports.formatError = function (err) {
 
 /***/ }),
 
+/***/ "./src/assets/img/memory_bg.png":
+/*!**************************************!*\
+  !*** ./src/assets/img/memory_bg.png ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "8c11579ef1b80c5096ed.png";
+
+/***/ }),
+
 /***/ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/client/ErrorOverlayEntry.js":
 /*!***************************************************************************************!*\
   !*** ./node_modules/@pmmmwh/react-refresh-webpack-plugin/client/ErrorOverlayEntry.js ***!
@@ -51410,7 +51462,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("073a5b8d1028071af3c4")
+/******/ 		__webpack_require__.h = () => ("8d98522d5bb07582a112")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -51957,7 +52009,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
-/******/ 		// no baseURI
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
