@@ -5165,7 +5165,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 450px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  /* background-color: #F4f2f0; */\n}\n\n.container {\n  font-family: \"Playwrite VN\", serif;\n  /* display: flex; */\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n}\n\n#memory-div {\n  font-family: \"Courier\", monospace;\n  font-size: 15px;\n  align-self: center;\n  /* font-weight: 700; */\n}\n\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}", "",{"version":3,"sources":["webpack://./src/pages/Memory/Memory.css"],"names":[],"mappings":"AAEA;EACI,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,yDAAA;EACA,sBAAA;EACA,4BAAA;EAEA,+BAAA;AADJ;;AAIA;EACE,kCAAA;EACA,mBAAA;EACA,mBAAA;EACA,qBAAA;EACA,uBAAA;AADF;;AAGA;EACE,iCAAA;EACA,eAAA;EACA,kBAAA;EACA,sBAAA;AAAF;;AAIE;EACE,kCAAA;EACA,yBAAA;EACA,gBAAA;EACA,kBAAA;AADJ","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');\n\nhtml {\n    width: 450px;\n    height: 260px;\n    margin: 0;\n    padding: 0;\n    background-image: url(\"../../assets/img/memory_bg.png\");\n    background-size: cover;\n    background-repeat: no-repeat;\n\n    /* background-color: #F4f2f0; */\n}\n\n.container {\n  font-family: \"Playwrite VN\", serif;\n  /* display: flex; */\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n}\n#memory-div {\n  font-family: 'Courier', monospace;\n  font-size: 15px;\n  align-self: center;\n  /* font-weight: 700; */\n}\n\n\n  .playwrite-vn {\n    font-family: \"Playwrite VN\", serif;\n    font-optical-sizing: auto;\n    font-weight: 300;\n    font-style: normal;\n  }\n  \n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 450px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  /* background-color: #F4f2f0; */\n}\n\n.container {\n  font-family: \"Playwrite VN\", serif;\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n}\n\n#memory-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  align-content: center;\n}\n\n.memory-output {\n  margin: 10px;\n  font-family: \"Courier\", monospace;\n  font-size: 15px;\n  align-self: center;\n  height: 100px;\n  resize: None;\n  width: 200px;\n  background-color: transparent;\n  border: 2px dashed white;\n  outline: None;\n  /* font-weight: 700; */\n}\n\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}", "",{"version":3,"sources":["webpack://./src/pages/Memory/Memory.css"],"names":[],"mappings":"AAEA;EACI,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,yDAAA;EACA,sBAAA;EACA,4BAAA;EAEA,+BAAA;AADJ;;AAIA;EACE,kCAAA;EAEA,mBAAA;EACA,qBAAA;EACA,uBAAA;AAFF;;AAKA;EACE,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,mBAAA;EACA,qBAAA;AAFF;;AAKA;EACE,YAAA;EACA,iCAAA;EACA,eAAA;EACA,kBAAA;EACA,aAAA;EACA,YAAA;EACA,YAAA;EACA,6BAAA;EACA,wBAAA;EACA,aAAA;EACA,sBAAA;AAFF;;AAME;EACE,kCAAA;EACA,yBAAA;EACA,gBAAA;EACA,kBAAA;AAHJ","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');\n\nhtml {\n    width: 450px;\n    height: 260px;\n    margin: 0;\n    padding: 0;\n    background-image: url(\"../../assets/img/memory_bg.png\");\n    background-size: cover;\n    background-repeat: no-repeat;\n\n    /* background-color: #F4f2f0; */\n}\n\n.container {\n  font-family: \"Playwrite VN\", serif;\n\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n}\n\n#memory-container {\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n  align-content: center;\n}\n\n.memory-output{\n  margin: 10px;\n  font-family: 'Courier', monospace;\n  font-size: 15px;\n  align-self: center;\n  height: 100px;\n  resize: None;\n  width: 200px;\n  background-color: transparent;\n  border: 2px dashed white;\n  outline: None;\n  /* font-weight: 700; */\n}\n\n\n  .playwrite-vn {\n    font-family: \"Playwrite VN\", serif;\n    font-optical-sizing: auto;\n    font-weight: 300;\n    font-style: normal;\n  }\n  \n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41122,11 +41122,6 @@ function getValueFromMemory() {
         if (key != undefined) {
             var transaction = db.transaction(storeName, "readonly");
             var store = transaction.objectStore(storeName);
-            // const key = 1;
-            // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
-            // if (key == undefined) {
-            //     key = 1;
-            // }
             console.log("the key we are getting is " + key);
             var getRequest = store.get(key);
             getRequest.onsuccess = function (event) {
@@ -41215,16 +41210,14 @@ var Main = function (_d) {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "A memory to live for"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { id: "memory-btn", onClick: handleClick }, "Remember a memory"),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "memory-container" },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "memory: "),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "memory-div" }))));
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", { value: memory, readOnly: true, className: 'memory-output' }))));
 };
 _a = Main;
 __webpack_require__.$Refresh$.register(_a, "Main");
 var Memory = function () {
     _c();
-    // const [value, setValue] = useState<string>('');
-    // const [isClicked, setIsClicked] = useState<boolean>(false);
     var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''), memory = _d[0], setMemory = _d[1];
     function fetchMemory() {
         return new Promise(function (resolve) {
@@ -41237,8 +41230,8 @@ var Memory = function () {
         (0,_db_Request__WEBPACK_IMPORTED_MODULE_2__.getValueFromMemory)().then(function (memory) {
             // memory = memory.replace(/\\n/g, "\n"); replace new line with spaces 
             memory = memory.replace(/\\n/g, "\n");
-            memory = memory.replace(/\n/g, '<br>');
-            document.getElementById('memory-div').innerHTML = memory;
+            // memory = memory.replace(/\n/g, '<br>');
+            // document.getElementById('memory-div').innerHTML = memory;
             setMemory(memory);
         }).catch(function (error) {
             console.log("Error fetching memory: ", error);
@@ -51459,7 +51452,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("36ab53f477e15c8083d9")
+/******/ 		__webpack_require__.h = () => ("af71830926ba25dd959e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

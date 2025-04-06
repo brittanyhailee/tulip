@@ -1,0 +1,11 @@
+"use strict";
+self["webpackHotUpdatetulip"]("background",{},
+/******/ function(__webpack_require__) { // webpackRuntimeModules
+/******/ /* webpack/runtime/getFullHash */
+/******/ (() => {
+/******/ 	__webpack_require__.h = () => ("ae523e80c5054952aa24")
+/******/ })();
+/******/ 
+/******/ }
+);
+//# sourceMappingURL=background.d735ab815fb08bec896e.hot-update.js.map
