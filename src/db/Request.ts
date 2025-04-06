@@ -19,42 +19,6 @@ request.onupgradeneeded = (event : IDBVersionChangeEvent) => {
     db.createObjectStore(storeName, {keyPath: 'id'});
 };
 
-export const dbSize = async (db, dbName) => {
-    return new Promise((resolve, reject) => {
-
-            const tx = db.transaction([dbName], 'readonly');
-            const store = tx.objectStore(storeName);
-            const cursorReq = store.openCursor();
-            let count = 0; 
-            let size = 0;
-            cursorReq.onsuccess = function(e) {
-                const cursor = cursorReq.result;
-                if (cursor) {
-                    count++;
-                    size = size + cursor.value.blob.size;
-                    cursor.continue();
-                    console.log("Count: ", count);
-
-                }
-            };
-            cursorReq.onerror = function(e) {
-                reject(e);
-            };  
-            tx.oncomplete = function(e) {              
-                resolve({
-                    count: count,
-                    size: size,
-                   
-                });
-        };
-        tx.onabort = function(e) {
-            reject(e);
-        };
-        tx.onerror = function(e) {
-            reject(e);
-        };
-    });     
-};
 
 var maxKey = 0;
 let keysArray: string | any[] = []
@@ -97,7 +61,6 @@ function getRandomKey() {
     const setRandomKey =  Math.floor(Math.random() * max);
     return keysArray[setRandomKey];
     
-    
 }
 
 
@@ -109,12 +72,6 @@ export function getValueFromMemory(): Promise<string> {
             
             const transaction = db.transaction(storeName, "readonly");
             const store = transaction.objectStore(storeName);
-            // const key = 1;
-
-             // PROBLEM IS WHEN THIS RETURNS UNDEFINED 
-            // if (key == undefined) {
-            //     key = 1;
-            // }
         
             console.log("the key we are getting is " + key);
             const getRequest = store.get(key);
@@ -135,7 +92,7 @@ export function getValueFromMemory(): Promise<string> {
                 console.error("Error getting value: ", event);
             };
         } else {
-            console.log('key is currently undefined');
+            console.log('Key is currently undefined');
         }
 
 
