@@ -1,17 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import './Memory.css';
 import IndexedDb from '../../db/indexedDb';
-import {getSize, getValueFromMemory} from '../../db/Request';
+import {getValueFromMemory} from '../../db/Request';
 
 
 const Main = ({ memory, handleClick }: { memory: string; handleClick: () => void }) =>{
   return (
     <div className="container">
 
-      <h1>Your memory</h1>
-      <p>memory goes here</p>
+      <h1>A memory to live for</h1>
    
-      <button id="memory-btn" onClick={handleClick}>Click me please...</button>
+      <button id="memory-btn" onClick={handleClick}>Remember a memory</button>
       <div>
         <h4>memory: </h4>
         <div id="memory-div"></div>

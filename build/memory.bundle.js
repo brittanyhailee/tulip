@@ -5162,9 +5162,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../assets/img/memory_bg.png */ "./src/assets/img/memory_bg.png"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 450px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  /* background-color: #F4f2f0; */\n  /* background-color: pink; */\n}", "",{"version":3,"sources":["webpack://./src/pages/Memory/Memory.css"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,yDAAA;EACA,sBAAA;EACA,4BAAA;EACA,+BAAA;EACA,4BAAA;AACJ","sourcesContent":["html {\n    width: 450px;\n    height: 260px;\n    margin: 0;\n    padding: 0;\n    background-image: url(\"../../assets/img/memory_bg.png\");\n    background-size: cover;\n    background-repeat: no-repeat;\n    /* background-color: #F4f2f0; */\n    /* background-color: pink; */\n  }\n\n  \n  \n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n  width: 450px;\n  height: 260px;\n  margin: 0;\n  padding: 0;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: cover;\n  background-repeat: no-repeat;\n  /* background-color: #F4f2f0; */\n}\n\n.container {\n  font-family: \"Playwrite VN\", serif;\n  /* display: flex; */\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n}\n\n#memory-div {\n  font-family: \"Courier\", monospace;\n  font-size: 15px;\n  align-self: center;\n  /* font-weight: 700; */\n}\n\n.playwrite-vn {\n  font-family: \"Playwrite VN\", serif;\n  font-optical-sizing: auto;\n  font-weight: 300;\n  font-style: normal;\n}", "",{"version":3,"sources":["webpack://./src/pages/Memory/Memory.css"],"names":[],"mappings":"AAEA;EACI,YAAA;EACA,aAAA;EACA,SAAA;EACA,UAAA;EACA,yDAAA;EACA,sBAAA;EACA,4BAAA;EAEA,+BAAA;AADJ;;AAIA;EACE,kCAAA;EACA,mBAAA;EACA,mBAAA;EACA,qBAAA;EACA,uBAAA;AADF;;AAGA;EACE,iCAAA;EACA,eAAA;EACA,kBAAA;EACA,sBAAA;AAAF;;AAIE;EACE,kCAAA;EACA,yBAAA;EACA,gBAAA;EACA,kBAAA;AADJ","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');\n\nhtml {\n    width: 450px;\n    height: 260px;\n    margin: 0;\n    padding: 0;\n    background-image: url(\"../../assets/img/memory_bg.png\");\n    background-size: cover;\n    background-repeat: no-repeat;\n\n    /* background-color: #F4f2f0; */\n}\n\n.container {\n  font-family: \"Playwrite VN\", serif;\n  /* display: flex; */\n  align-items: center;\n  align-content: center;\n  justify-content: center;\n}\n#memory-div {\n  font-family: 'Courier', monospace;\n  font-size: 15px;\n  align-self: center;\n  /* font-weight: 700; */\n}\n\n\n  .playwrite-vn {\n    font-family: \"Playwrite VN\", serif;\n    font-optical-sizing: auto;\n    font-weight: 300;\n    font-style: normal;\n  }\n  \n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40988,7 +40989,6 @@ module.exports = styleTagTransform;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "dbSize": () => (/* binding */ dbSize),
 /* harmony export */   "getValueFromMemory": () => (/* binding */ getValueFromMemory)
 /* harmony export */ });
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
@@ -41046,41 +41046,39 @@ request.onupgradeneeded = function (event) {
     var db = event.target.result;
     db.createObjectStore(storeName, { keyPath: 'id' });
 };
-var dbSize = function (db, dbName) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, new Promise(function (resolve, reject) {
-                var tx = db.transaction([dbName], 'readonly');
-                var store = tx.objectStore(storeName);
-                var cursorReq = store.openCursor();
-                var count = 0;
-                var size = 0;
-                cursorReq.onsuccess = function (e) {
-                    var cursor = cursorReq.result;
-                    if (cursor) {
-                        count++;
-                        size = size + cursor.value.blob.size;
-                        cursor.continue();
-                        console.log("Count: ", count);
-                    }
-                };
-                cursorReq.onerror = function (e) {
-                    reject(e);
-                };
-                tx.oncomplete = function (e) {
-                    resolve({
-                        count: count,
-                        size: size,
-                    });
-                };
-                tx.onabort = function (e) {
-                    reject(e);
-                };
-                tx.onerror = function (e) {
-                    reject(e);
-                };
-            })];
-    });
-}); };
+// export const dbSize = async (db, dbName) => {
+//     return new Promise((resolve, reject) => {
+//             const tx = db.transaction([dbName], 'readonly');
+//             const store = tx.objectStore(storeName);
+//             const cursorReq = store.openCursor();
+//             let count = 0; 
+//             let size = 0;
+//             cursorReq.onsuccess = function(e) {
+//                 const cursor = cursorReq.result;
+//                 if (cursor) {
+//                     count++;
+//                     size = size + cursor.value.blob.size;
+//                     cursor.continue();
+//                     console.log("Count: ", count);
+//                 }
+//             };
+//             cursorReq.onerror = function(e) {
+//                 reject(e);
+//             };  
+//             tx.oncomplete = function(e) {              
+//                 resolve({
+//                     count: count,
+//                     size: size,
+//                 });
+//         };
+//         tx.onabort = function(e) {
+//             reject(e);
+//         };
+//         tx.onerror = function(e) {
+//             reject(e);
+//         };
+//     });     
+// };
 var maxKey = 0;
 var keysArray = [];
 var randomKeyTest = 0;
@@ -41148,7 +41146,7 @@ function getValueFromMemory() {
             };
         }
         else {
-            console.log('key is currently undefined');
+            console.log('Key is currently undefined');
         }
     });
 }
@@ -41215,9 +41213,8 @@ _c = __webpack_require__.$Refresh$.signature();
 var Main = function (_d) {
     var memory = _d.memory, handleClick = _d.handleClick;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Your memory"),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "memory goes here"),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { id: "memory-btn", onClick: handleClick }, "Click me please..."),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "A memory to live for"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { id: "memory-btn", onClick: handleClick }, "Remember a memory"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "memory: "),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "memory-div" }))));
@@ -51462,7 +51459,7 @@ module.exports = getWDSMetadata;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("8d98522d5bb07582a112")
+/******/ 		__webpack_require__.h = () => ("36ab53f477e15c8083d9")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
