@@ -10,9 +10,8 @@ const Main = ({ memory, handleClick }: { memory: string; handleClick: () => void
 
       <h1>A memory to live for</h1>
    
-      <button id="memory-btn" onClick={handleClick}>Remember a memory</button>
+
       <div id="memory-container">
-        <h4>memory: </h4>
         {/* <div id="memory-div"></div>  */}
    
         <textarea
@@ -25,6 +24,7 @@ const Main = ({ memory, handleClick }: { memory: string; handleClick: () => void
             .map((line, index) => <p key={index}>{line}</p>)
             }
           </div> */}
+          <button id="memory-btn" onClick={handleClick}>Remember a memory</button>
       </div>
       
     </div>
