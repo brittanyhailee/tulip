@@ -12,20 +12,97 @@ html {
     /* background-color: #F4f2f0; */
 }
 
+h1 {
+  font-size: 15px;
+  justify-self: center;
+  color: white;
+}
+
+
 .container {
   font-family: "Playwrite VN", serif;
-  /* display: flex; */
+
   align-items: center;
   align-content: center;
   justify-content: center;
 }
-#memory-div {
+
+#memory-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0;
+  margin: 0;
+  width: 400px;
+  margin-left: 15px;
+}
+
+h4 {
+  margin: 0;
+}
+
+.memory-output{
+  margin: 10px;
+ 
   font-family: 'Courier', monospace;
   font-size: 15px;
   align-self: center;
+  height: 100px;
+  resize: None;
+  width: 200px;
+  background-color: transparent;
+  border: 2px dashed white;
+  outline: None;
   /* font-weight: 700; */
 }
 
+#memory-btn {
+  border-radius: 5px;
+  border: none;
+}
+
+
+#memory-btn {
+  align-self: center;
+  background-color: #efe6dc;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Playwrite VN", serif;
+  font-size: 15px;
+  line-height: 17px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#memory-btn:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+#memory-btn:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
 
   .playwrite-vn {
     font-family: "Playwrite VN", serif;

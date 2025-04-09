@@ -10,11 +10,21 @@ const Main = ({ memory, handleClick }: { memory: string; handleClick: () => void
 
       <h1>A memory to live for</h1>
    
-      <button id="memory-btn" onClick={handleClick}>Remember a memory</button>
-      <div>
-        <h4>memory: </h4>
-        <div id="memory-div"></div>
-        {/* <p >{memory}</p> */}
+
+      <div id="memory-container">
+        {/* <div id="memory-div"></div>  */}
+   
+        <textarea
+          value={memory}
+          readOnly
+          className='memory-output'
+         />
+        {/* <div id="memory-div">{memory
+            .split("\n")
+            .map((line, index) => <p key={index}>{line}</p>)
+            }
+          </div> */}
+          <button id="memory-btn" onClick={handleClick}>Remember a memory</button>
       </div>
       
     </div>
@@ -22,10 +32,7 @@ const Main = ({ memory, handleClick }: { memory: string; handleClick: () => void
 };
 
 const Memory: React.FC = () => {
-  // const [value, setValue] = useState<string>('');
-  // const [isClicked, setIsClicked] = useState<boolean>(false);
   const [memory, setMemory] = useState<string>('');
-  
 
 
   function fetchMemory(): Promise<string> {
@@ -41,9 +48,9 @@ const Memory: React.FC = () => {
     getValueFromMemory().then((memory) => {
       // memory = memory.replace(/\\n/g, "\n"); replace new line with spaces 
       memory = memory.replace(/\\n/g, "\n"); 
-      memory = memory.replace(/\n/g, '<br>');
+      // memory = memory.replace(/\n/g, '<br>');
       
-      document.getElementById('memory-div').innerHTML = memory;
+      // document.getElementById('memory-div').innerHTML = memory;
     
       setMemory(memory);
     }).catch((error) => {
