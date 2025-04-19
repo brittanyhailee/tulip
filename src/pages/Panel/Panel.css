@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');
+
 html {
   width: 500px;
-  height: 240px;
+  height: 310px;
   margin: 0;
   padding: 0;
-  background-image: url("../../assets/img/green_bg2.png");
+  background-image: url("../../assets/img/memory_bg3.jpg");
   background-color: cadetblue;
   /* background-color: pink; */
   background-repeat: no-repeat;
@@ -39,7 +41,7 @@ textarea {
   justify-self: center;
   justify-content: center;
   align-items: center;
-  
+  margin-bottom: 0;
 }
 
 
@@ -54,6 +56,49 @@ form {
 }
 
 button {
+  align-self: center;
+  background-color: #efe6dc;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Playwrite VN", serif;
+  font-size: 17px;
+  line-height: 17px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  /* my changes: */
+  width: 90px;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+buttonn:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+/* button {
   font-family: "OtomanopeeOne";
   color: white;
   width: 120px;
@@ -66,7 +111,7 @@ button {
   background-color: transparent;
   font-size: 18px;
   position: relative;
-  display: inline-block; /* Ensures the button has its intrinsic width */
+  display: inline-block; 
   margin-bottom: 0;
 
 }
@@ -85,20 +130,27 @@ button::after {
 
 button:hover::after {
   width: 100%;
-}
+} */
 
 h1 {
-  margin-top: 20px;
+  margin-top: 2px;
   margin-bottom: 0;
-  font-family: "OtomanopeeOne";
-  font-size: 17px;
-  color: white;
+  font-family: "Playwrite VN", serif;
+  font-size: 19px;
+  color: black;
 }
 
 
 
 
-@font-face {
+/* @font-face {
   font-family: "OtomanopeeOne";
   src: url("../../assets/fonts/OtomanopeeOne-Regular.ttf") format('truetype');
+} */
+
+.playwrite-vn {
+  font-family: "Playwrite VN", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }

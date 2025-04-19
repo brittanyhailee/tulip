@@ -15,7 +15,7 @@ const  Main = ({handleClick, textareaRef}: {handleClick: () => void, textareaRef
           <textarea ref={textareaRef} id="memory"></textarea>
         </form>
       </div>
-    <button form="input" onClick={handleClick} type="submit" value="send">౨ৎ˚⟡send⋆౨ৎ˚</button>
+    <button form="input" onClick={handleClick} type="submit" value="send">send</button>
     </div>
   );
 };
