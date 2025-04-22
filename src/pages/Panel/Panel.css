@@ -28,6 +28,7 @@ textarea {
   background-color: transparent;
   border: 2px dashed white;
   outline: None;
+  margin-right: 15px;
 }
 
 #tag{

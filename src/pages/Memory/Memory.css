@@ -55,7 +55,7 @@ h4 {
   resize: None;
   width: 200px;
   background-color: transparent;
-  border: 2px dashed white;
+  border: 2px dashed #6d8968;
   outline: None;
   /* font-weight: 700; */
 }
