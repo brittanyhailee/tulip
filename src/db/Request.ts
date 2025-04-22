@@ -19,42 +19,6 @@ request.onupgradeneeded = (event : IDBVersionChangeEvent) => {
     db.createObjectStore(storeName, {keyPath: 'id'});
 };
 
-// export const dbSize = async (db, dbName) => {
-//     return new Promise((resolve, reject) => {
-
-//             const tx = db.transaction([dbName], 'readonly');
-//             const store = tx.objectStore(storeName);
-//             const cursorReq = store.openCursor();
-//             let count = 0; 
-//             let size = 0;
-//             cursorReq.onsuccess = function(e) {
-//                 const cursor = cursorReq.result;
-//                 if (cursor) {
-//                     count++;
-//                     size = size + cursor.value.blob.size;
-//                     cursor.continue();
-//                     console.log("Count: ", count);
-
-//                 }
-//             };
-//             cursorReq.onerror = function(e) {
-//                 reject(e);
-//             };  
-//             tx.oncomplete = function(e) {              
-//                 resolve({
-//                     count: count,
-//                     size: size,
-                   
-//                 });
-//         };
-//         tx.onabort = function(e) {
-//             reject(e);
-//         };
-//         tx.onerror = function(e) {
-//             reject(e);
-//         };
-//     });     
-// };
 
 var maxKey = 0;
 let keysArray: string | any[] = []
